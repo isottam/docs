@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How a 30-minute conversation becomes a permanent asset</title>
+<meta property="og:title" content="How a 30-minute conversation becomes a permanent asset"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#faf8f5; --bg-card:#ffffff; --bg-hover:#f5f2ee; --bg-inset:#f0ece6;
+    --border:#e8e2d9; --border-strong:#d4cdc2;
+    --text:#2c2520; --text-secondary:#6f655c; --text-tertiary:#a69e94;
+    --wine:#8b2252; --wine-dim:rgba(139,34,82,.08); --wine-light:#a63a6a;
+    --green:#2d7a4f; --green-dim:rgba(45,122,79,.08);
+    --amber:#b8860b; --amber-dim:rgba(184,134,11,.08);
+    --blue:#3d6b99; --blue-dim:rgba(61,107,153,.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{font-size:16px; scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg); color:var(--text);
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  .serif{font-family:'DM Serif Display',Georgia,serif;}
+  .mono{font-family:'DM Mono',monospace;}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:84px 0 56px; text-align:center; border-bottom:1px solid var(--border);}
+  .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:22px;}
+  h1.serif{font-size:3.1rem; line-height:1.08; letter-spacing:-.01em; max-width:780px; margin:0 auto 22px;}
+  .hero-sub{font-size:1.12rem; color:var(--text-secondary); max-width:600px; margin:0 auto;}
+  .hero-sub em{font-family:'DM Serif Display',serif; font-style:italic; color:var(--text);}
+  .for-isabella{display:inline-block; margin-top:30px; font-size:.85rem; color:var(--text-tertiary); border:1px solid var(--border-strong); border-radius:999px; padding:7px 18px;}
+
+  /* ---------- THE BIG IDEA ---------- */
+  .bigidea{padding:56px 0; text-align:center; background:var(--bg-inset); border-bottom:1px solid var(--border);}
+  .bigidea .serif{font-size:1.9rem; line-height:1.28; max-width:760px; margin:0 auto 16px;}
+  .bigidea .serif b{color:var(--wine); font-weight:400;}
+  .bigidea p{color:var(--text-secondary); max-width:600px; margin:0 auto; font-size:1.02rem;}
+
+  /* ---------- FLOW STRIP ---------- */
+  section.flow{padding:64px 0 36px;}
+  .section-head{text-align:center; margin-bottom:48px;}
+  .section-head .eyebrow{font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-tertiary); font-weight:600;}
+  .section-head h2{font-family:'DM Serif Display',serif; font-size:2.1rem; margin-top:10px; letter-spacing:-.01em;}
+  .strip{display:grid; grid-template-columns:repeat(5,1fr); gap:0; align-items:stretch; margin-bottom:8px;}
+  .stage{position:relative; padding:0 14px; text-align:center;}
+  .stage .num{width:30px; height:30px; border-radius:50%; border:1.5px solid var(--border-strong); color:var(--text-tertiary); font-size:.8rem; font-weight:600; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;}
+  .stage.turning .num{background:var(--wine); border-color:var(--wine); color:#fff;}
+  .stage .ico{font-size:1.7rem; margin-bottom:12px; line-height:1;}
+  .stage .name{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--text); margin-bottom:8px;}
+  .stage.turning .name{color:var(--wine);}
+  .stage .cap{font-size:.86rem; color:var(--text-secondary); font-style:italic; font-family:'DM Serif Display',serif;}
+  .stage .arrow{position:absolute; top:8px; right:-9px; color:var(--border-strong); font-size:1.1rem;}
+  .stage:last-child .arrow{display:none;}
+  .flow-foot{text-align:center; font-family:'DM Serif Display',serif; font-style:italic; color:var(--text-secondary); font-size:1.05rem; margin-top:30px;}
+
+  /* ---------- DEEP STAGE CARDS ---------- */
+  section.deep{padding:40px 0 24px;}
+  .stagecard{background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:38px 40px; margin-bottom:26px; position:relative; overflow:hidden;}
+  .stagecard.turning{border-color:var(--wine); border-width:1.5px; box-shadow:0 1px 0 var(--wine-dim);}
+  .stagecard .tag{position:absolute; top:0; left:0; background:var(--bg-inset); color:var(--text-tertiary); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; padding:6px 16px; border-bottom-right-radius:12px;}
+  .stagecard.turning .tag{background:var(--wine); color:#fff;}
+  .sc-head{display:flex; align-items:baseline; gap:14px; margin:18px 0 6px;}
+  .sc-head .stepno{font-family:'DM Serif Display',serif; font-size:2.4rem; color:var(--border-strong); line-height:1;}
+  .stagecard.turning .sc-head .stepno{color:var(--wine-light);}
+  .sc-head h3{font-family:'DM Serif Display',serif; font-size:1.65rem; letter-spacing:-.01em;}
+  .sc-lede{font-size:1.05rem; color:var(--text-secondary); margin-bottom:24px; max-width:680px;}
+  .sc-lede b{color:var(--text); font-weight:600;}
+  .sc-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media(max-width:720px){.sc-grid{grid-template-columns:1fr;}}
+  .mech{background:var(--bg-hover); border-radius:11px; padding:18px 20px; border:1px solid var(--border);}
+  .mech h4{font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--wine); font-weight:700; margin-bottom:9px; display:flex; align-items:center; gap:8px;}
+  .mech p{font-size:.94rem; color:var(--text-secondary);}
+  .mech p b{color:var(--text); font-weight:600;}
+  .mech code{font-family:'DM Mono',monospace; font-size:.82em; background:var(--bg-inset); padding:1px 6px; border-radius:5px; color:var(--text);}
+  .plain{margin-top:18px; background:var(--green-dim); border-left:3px solid var(--green); border-radius:0 8px 8px 0; padding:13px 18px; font-size:.92rem;}
+  .plain b{color:var(--green); font-weight:700; letter-spacing:.04em; font-size:.74rem; text-transform:uppercase; display:block; margin-bottom:4px;}
+
+  /* ---------- WHY FLAT / THE TWO PILLARS ---------- */
+  section.pillars{padding:56px 0; background:var(--bg-inset); border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-top:30px;}
+  .pillar-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:40px;}
+  @media(max-width:720px){.pillar-grid{grid-template-columns:1fr;}}
+  .pillar{background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:30px 32px;}
+  .pillar .pico{font-size:1.6rem; margin-bottom:14px;}
+  .pillar h3{font-family:'DM Serif Display',serif; font-size:1.4rem; margin-bottom:12px;}
+  .pillar p{color:var(--text-secondary); font-size:.96rem; margin-bottom:14px;}
+  .pillar ul{list-style:none; font-size:.92rem;}
+  .pillar li{padding:7px 0 7px 22px; position:relative; color:var(--text-secondary); border-top:1px solid var(--border);}
+  .pillar li:before{content:""; position:absolute; left:2px; top:14px; width:7px; height:7px; border-radius:50%; background:var(--wine);}
+  .pillar li b{color:var(--text);}
+  .pillar li code{font-family:'DM Mono',monospace; font-size:.82em; background:var(--bg-inset); padding:1px 6px; border-radius:5px;}
+
+  /* ---------- THE SCORING MACHINE ---------- */
+  section.scoring{padding:64px 0;}
+  .score-box{background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:38px 40px; margin-top:36px;}
+  .score-row{display:flex; align-items:center; gap:18px; padding:16px 0; border-top:1px solid var(--border);}
+  .score-row:first-of-type{border-top:none;}
+  .score-pts{font-family:'DM Serif Display',serif; font-size:2.1rem; color:var(--wine); min-width:64px; text-align:center;}
+  .score-row .lbl b{display:block; font-size:1rem; color:var(--text); margin-bottom:2px;}
+  .score-row .lbl span{font-size:.9rem; color:var(--text-secondary);}
+  .score-note{margin-top:24px; font-style:italic; font-family:'DM Serif Display',serif; color:var(--text-secondary); text-align:center; font-size:1.02rem;}
+
+  /* ---------- ONE LINE ---------- */
+  section.oneline{padding:72px 0; text-align:center; background:var(--wine); color:#fff;}
+  section.oneline .serif{font-size:2.2rem; line-height:1.3; max-width:760px; margin:0 auto;}
+  section.oneline .serif em{font-style:italic; color:#f2c8da;}
+  section.oneline .tiny{margin-top:24px; font-size:.84rem; color:rgba(255,255,255,.6); letter-spacing:.04em;}
+
+  /* ---------- FITS INTO VAULT ---------- */
+  section.vaultfit{padding:66px 0; background:var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .vf-intro{text-align:center; max-width:680px; margin:0 auto 46px; color:var(--text-secondary); font-size:1.04rem;}
+  .vf-intro b{color:var(--text);}
+  .vfmap{display:grid; grid-template-columns:1fr; gap:0; max-width:860px; margin:0 auto;}
+  .vf-source{background:var(--wine); color:#fff; border-radius:14px; padding:22px 28px; text-align:center; position:relative; z-index:2; box-shadow:0 6px 24px rgba(139,34,82,.18);}
+  .vf-source .vf-lab{font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:6px;}
+  .vf-source .vf-name{font-family:'DM Serif Display',serif; font-size:1.35rem;}
+  .vf-source .vf-meta{font-family:'DM Mono',monospace; font-size:.76rem; opacity:.85; margin-top:8px;}
+  .vf-stem{height:34px; width:2px; background:var(--border-strong); margin:0 auto;}
+  .vf-fan{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media(max-width:760px){.vf-fan{grid-template-columns:1fr 1fr;}}
+  .vf-dest{background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; padding:18px; text-align:center; position:relative;}
+  .vf-dest:before{content:""; position:absolute; top:-34px; left:50%; width:1.5px; height:34px; background:var(--border-strong);}
+  .vf-dest .vf-ico{font-size:1.5rem; margin-bottom:8px;}
+  .vf-dest .vf-where{font-family:'DM Mono',monospace; font-size:.72rem; color:var(--wine); font-weight:500; margin-bottom:6px;}
+  .vf-dest .vf-what{font-size:.86rem; color:var(--text-secondary);}
+  .vf-dest .vf-what b{color:var(--text);}
+  .vf-line{text-align:center; color:var(--text-tertiary); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; margin:30px 0 18px;}
+  .vf-foot{margin-top:40px; text-align:center; font-family:'DM Serif Display',serif; font-style:italic; font-size:1.12rem; color:var(--text); max-width:720px; margin-left:auto; margin-right:auto;}
+  .vf-foot b{color:var(--wine); font-style:normal; font-weight:400;}
+
+  footer{padding:40px 0 64px; text-align:center; color:var(--text-tertiary); font-size:.82rem;}
+  footer .mono{color:var(--text-secondary);}
+
+
+
+/* PDF-only adjustments — page size is driven by render.py (measures rendered
+   document height + sets a single tall page) so we just disable break logic. */
+@page { margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+<div class="kicker">The system, end to end</div>    <h1 class="serif">How a 30-minute conversation becomes a permanent asset</h1>
+<p class="hero-sub">You asked three things: how I <em>file</em>, how I <em>tag</em> so it stays findable, and the <em>end part</em> — turning a raw recording into something I can pull up months later. Here is the whole machine, one stage at a time.</p><div class="for-isabella">Written for Isabella · the real pipeline, nothing hand-wavy</div>  </div>
+</header>
+
+
+<section class="bigidea">
+  <div class="wrap">
+<p class="serif">The trick is this: I don't file into <strong>folders</strong>. I file into <strong>metadata</strong> — and then a saved query does the cross-referencing for me, forever.</p><p>Folders force one note to live in one place. A conversation that touches three projects can only sit in one folder, so the tree fights you. Metadata and links don't have that problem — a note can belong to everything at once.</p>  </div>
+</section>
+
+<section class="flow">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">The five stages</div><h2>One pass turns talk into an asset</h2>    </div>
+    <div class="strip">
+      <div class="stage">
+        <div class="num">1</div>
+<div class="ico">🎤</div>        <div class="name">Capture</div>
+<div class="cap">cheap, always-on</div><div class="arrow">→</div>      </div>
+      <div class="stage">
+        <div class="num">2</div>
+<div class="ico">〜</div>        <div class="name">Transcribe</div>
+<div class="cap">voices separated</div><div class="arrow">→</div>      </div>
+      <div class="stage">
+        <div class="num">3</div>
+<div class="ico">📄</div>        <div class="name">Raw artefact</div>
+<div class="cap">dumb on purpose</div><div class="arrow">→</div>      </div>
+      <div class="stage turning">
+        <div class="num">4</div>
+<div class="ico">⚡</div>        <div class="name">The turning point</div>
+<div class="cap">a single pass</div><div class="arrow">→</div>      </div>
+      <div class="stage">
+        <div class="num">5</div>
+<div class="ico">🔗</div>        <div class="name">Fan-out</div>
+<div class="cap">wires itself in</div>      </div>
+    </div>
+<p class="flow-foot">Capture cheap once. Re-enrich forever. The boring first pass is what makes the magic possible.</p>  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="stagecard">
+<div class="tag">Stage 1 · Capture</div>      <div class="sc-head">
+<span class="stepno">01</span>        <h3>The recording, with no thinking attached</h3>
+      </div>
+<p class="sc-lede">A conversation gets recorded and dropped in automatically — <strong>no decisions made at this stage on purpose</strong>. The whole point is that capture is cheap and never asks me to categorise anything in the moment. Filing decisions are the thing that kills note-taking; so capture makes zero of them.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>What actually happens</h4><p>An iOS recording lands as a file, untouched. It goes into <strong>one flat folder</strong> — <code>15. Transcripts/</code> — alongside ~400 others. No sub-folders by person, project or month.</p>        </div>
+        <div class="mech">
+<h4>Why it's "dumb"</h4><p>It carries one type-tag, <code>#MeetingSummary</code>, and nothing else yet. The intelligence comes later, in one deliberate pass. Capture stays brainless so it never becomes a chore.</p>        </div>
+      </div>
+<div class="plain"><b>In plain terms</b>Get the raw thing in the door with zero friction. Don't decide where it "belongs" yet — that decision is what makes people stop taking notes.</div>    </div>
+    <div class="stagecard">
+<div class="tag">Stage 2 · Transcribe</div>      <div class="sc-head">
+<span class="stepno">02</span>        <h3>Speech becomes text, with voices kept apart</h3>
+      </div>
+<p class="sc-lede">The audio is auto-transcribed and <strong>diarised</strong> — a fancy word for "the speakers are separated". The transcriber doesn't know <em>who</em> is who; it just knows there were two voices and labels them <code>spk_0</code> and <code>spk_1</code>. Naming them correctly is a later job, and it's the one I'm most careful about.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>The tool</h4><p>AWS Transcribe sits behind the recording app. Out comes a transcript where every line is stamped with which voice said it — but only as <code>spk_0</code> / <code>spk_1</code>.</p>        </div>
+        <div class="mech">
+<h4>The trap I avoid</h4><p>Guessing who's who from "this one sounds more like the marketing person" is how you misattribute a quote. <strong>Misattribution is the single worst failure</strong> — so naming voices gets evidence, not vibes (Stage 4).</p>        </div>
+      </div>
+<div class="plain"><b>In plain terms</b>The machine writes down everything and tags each line with a voice number. It does not yet know your name from mine — and pretending it does is where most systems go wrong.</div>    </div>
+    <div class="stagecard">
+<div class="tag">Stage 3 · Raw artefact</div>      <div class="sc-head">
+<span class="stepno">03</span>        <h3>A real file, but still inert</h3>
+      </div>
+<p class="sc-lede">Now there's a transcript sitting in <code>15. Transcripts/</code>. It's a genuine record — but it's <strong>not yet findable or connected to anything</strong>. If I left it here, in six months I'd never locate it. This is exactly the stage you said you were stuck on: "I have the transcription pipeline, I'm just figuring out the end part." The end part is everything after this.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>What it has</h4><p>Verbatim dialogue, speaker numbers, a timestamp. The auto-summary at the top is shallow — it flattens the numbers, names and stories that actually matter.</p>        </div>
+        <div class="mech">
+<h4>What it's missing</h4><p>No real author. No topics from my controlled list. No links to the people in it. No analysis. No connection to past conversations. <strong>Raw, not yet an asset.</strong></p>        </div>
+      </div>
+<div class="plain"><b>In plain terms</b>You have the conversation written down. That is necessary but useless on its own — a box of facts with no index. The next single step is what turns it into something you can actually retrieve and trust.</div>    </div>
+    <div class="stagecard turning">
+<div class="tag">Stage 4 · The turning point</div>      <div class="sc-head">
+<span class="stepno">04</span>        <h3>One pass that does five things, in order</h3>
+      </div>
+<p class="sc-lede">This is the whole game — a single processing pass run over the raw transcript. It's a defined routine (I call it <code>/transcript</code>) and it always does the same five things, in the same order. <strong>This is the "end part" you're missing.</strong> Each sub-step below is a real, named mechanism, not a vague "and then I tidy it up".</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>1 · Lock down who said what</h4><p>Build a <strong>speaker map</strong> from <em>dispositive</em> quotes — lines that can only have been said by one person (e.g. someone asking the other about their INSEAD exams must be the non-student). Two pieces of hard evidence per voice. If I can't prove it, I stop and ask rather than guess.</p>        </div>
+        <div class="mech">
+<h4>2 · Load the relationship</h4><p>Pull the <strong>People card</strong> and every prior note/transcript for everyone in the room <em>before</em> writing. So the new note already knows the history — last time we spoke, what's open, how warm the relationship is.</p>        </div>
+        <div class="mech">
+<h4>3 · Synthesise, don't transcribe</h4><p>Write a <strong>fresh analytical note</strong> in <code>4. Notes/</code>: key points framed as <em>implications not recap</em>, real quotes pulled from the raw text, action items, open questions. The raw transcript stays attached at the bottom, verbatim. The value is the thinking on top.</p>        </div>
+        <div class="mech">
+<h4>4 · Tag the raw file too</h4><p>Backfill the original transcript's <strong>Topics, Author, Description</strong> so even the raw artefact becomes queryable — not just the polished note. Nothing is left un-indexed.</p>        </div>
+        <div class="mech" style="grid-column:1 / -1;">
+<h4>5 · Update the CRM</h4><p>Bump the person's <strong>People card</strong>: last-interaction date, interaction count +1, relationship strength re-assessed (<code>New</code> → <code>Familiar</code> → <code>Active</code>), and a new row in their interaction log linking to this note. The conversation now lives in <em>their</em> file too, not just the meeting's.</p>        </div>
+      </div>
+<div class="plain"><b>In plain terms</b>This is the one habit that matters. Instead of saving a transcript and hoping, you run it through a fixed checklist that names the speakers properly, writes the real takeaways, tags everything from a fixed list, and updates the person's record. Five steps, same every time. Do this and the conversation stops being a recording and becomes a permanent, trustworthy asset.</div>    </div>
+    <div class="stagecard">
+<div class="tag">Stage 5 · Fan-out</div>      <div class="sc-head">
+<span class="stepno">05</span>        <h3>The note wires itself into everything related</h3>
+      </div>
+<p class="sc-lede">Here's the payoff, and it's the bit that feels like magic but isn't. <strong>I never manually cross-link notes.</strong> Every note ends with a "Related" block that is a <em>live query</em>, not a hand-typed list. The moment a note is filed with good metadata, that query automatically surfaces it next to every other note that shares an author, a topic or a tag — scored and ranked.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>The live query (Bases)</h4><p>A saved query runs on every note, comparing its author/topics/tags against the whole vault and listing the closest matches. <strong>Add metadata once — the web of links builds itself.</strong></p>        </div>
+        <div class="mech">
+<h4>The compounding effect</h4><p>A conversation from six months ago resurfaces <em>exactly</em> when I open a related note — because they share a topic or a person. The People cards do the same for relationships. Nothing rots.</p>        </div>
+      </div>
+<div class="plain"><b>In plain terms</b>You don't keep a map of how everything connects. You tag each note well, and a saved search draws the map for you — and redraws it every time something new comes in. That's why old conversations pop back up at the right moment.</div>    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">Your first two questions, answered</div><h2>Flat filing, three-layer tagging</h2>    </div>
+    <div class="pillar-grid">
+      <div class="pillar">
+<div class="pico">📁</div><h3><ol>
+<li>The filing (the "flat" part)</li>
+</ol></h3><p>Almost everything lives in two flat folders. There is no "INSEAD › P2 › Finance › Lectures" tree. Everything sits at one level and is organised by metadata instead.</p>        <ul>
+<li><strong><code>4. Notes/</code></strong> — the hub. Synthesis notes, write-ups, anything thought-through. New notes default here.</li><li><strong><code>5. Sources/</code></strong> — external material: articles, podcasts, readings.</li><li><strong><code>15. Transcripts/</code></strong> — raw recordings, ~400 of them, no sub-folders.</li><li>A few specialist folders exist (People, Wine, Recipes) for genuinely distinct object types — but never nested by topic.</li><li><strong>One rule makes flatness work:</strong> every note carries <code>Up: [[Map]]</code> at the top — a link to one central map. The hierarchy is a <strong>link graph, not a folder tree</strong>. You navigate by following links and queries, never by clicking down through folders.</li>        </ul>
+      </div>
+      <div class="pillar">
+<div class="pico">🏷️</div><h3><ol start="2">
+<li>The tagging (how it stays findable)</li>
+</ol></h3><p>Three layers, and the discipline is the whole trick. The fixed lists are what stop tags rotting into 50 near-duplicates.</p>        <ul>
+<li><strong>Topics</strong> — from a <strong>fixed allowed list</strong> of ~25 (a controlled vocabulary: "AI and Technology", "Leadership and Startup", "INSEADCourse"…). Not free-form. A closed list means every note on a subject is tagged with the same word — so one query returns all of it.</li><li><strong>Entity tags</strong> — <code>#CamelCase</code> inline tags for people, orgs and concepts (<code>#Anthropic</code>, <code>#ClaudeCode</code>). 3–6 per note. The fine-grained threads.</li><li><strong>Type tags</strong> — one per note marking <em>what kind of thing it is</em>: <code>#MeetingSummary</code>, <code>#task</code>, <code>#resource</code>, <code>#idea</code>.</li><li><strong>Author field</strong> — on top of the three, an <code>Author</code> field in CamelCase (<code>FreddieChambers</code>, <code>IsabellaIsotta</code>) ties every note to the people in it.</li>        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="scoring">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">Why findability is automatic</div><h2>The query that ranks "related" for me</h2>    </div>
+<p style="text-align:center; max-width:660px; margin:0 auto; color:var(--text-secondary);">The "Related" block at the foot of every note scores all other notes against this one and shows the top matches. I tune nothing by hand — I just tag well. The scoring is simple:</p>    <div class="score-box">
+      <div class="score-row">
+        <div class="score-pts">+3</div>
+        <div class="lbl"><b>Shared author</b><span>The same person appears in both notes — the strongest signal that two notes belong together.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">+2</div>
+        <div class="lbl"><b>Each shared tag</b><span>Every <code>#CamelCase</code> entity tag in common adds two points.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">+1</div>
+        <div class="lbl"><b>Each shared topic</b><span>Every topic from the fixed list in common adds one point.</span></div>
+      </div>
+<div class="score-note">Notes are ranked by total score, highest first. Tag a note well once, and it wires itself into everything related — permanently, with no manual cross-linking.</div>    </div>
+  </div>
+</section>
+
+<section class="vaultfit">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">The part that matters most</div><h2>Where one conversation actually ends up</h2>    </div>
+<p class="vf-intro">This is the bit to really get. <strong>A single 30-minute call does not become a single note.</strong> The five-step pass scatters it into the right places across the vault, and the live query then connects all of them automatically. Here's exactly where one real call lands:</p>    <div class="vfmap">
+      <div class="vf-source">
+<div class="vf-lab">The conversation</div>        <div class="vf-name">"Call with Isabella — note systems, AI Club"</div>
+<div class="vf-meta">one 30-min recording</div>      </div>
+      <div class="vf-stem"></div>
+      <div class="vf-fan">
+        <div class="vf-dest">
+<div class="vf-ico">📝</div><div class="vf-where"><ol start="4">
+<li>Notes/</li>
+</ol></div><div class="vf-what"><strong>The synthesis note.</strong> The thinking — key points, quotes, actions, open questions. The asset itself.</div>        </div>
+        <div class="vf-dest">
+<div class="vf-ico">🗣</div><div class="vf-where"><ol start="15">
+<li>Transcripts/</li>
+</ol></div><div class="vf-what"><strong>The raw transcript</strong>, now back-filled with topics + author so even it is searchable.</div>        </div>
+        <div class="vf-dest">
+<div class="vf-ico">👤</div><div class="vf-where"><ol start="7">
+<li>People/</li>
+</ol></div><div class="vf-what"><strong>Isabella's card</strong> updated — last seen today, count +1, strength bumped, new log row linking back.</div>        </div>
+        <div class="vf-dest">
+<div class="vf-ico">🎯</div><div class="vf-where"><ol>
+<li>Efforts/</li>
+</ol></div><div class="vf-what"><strong>The AI Club note</strong> gets a quote callout, if the call moved that project forward.</div>        </div>
+      </div>
+<div class="vf-line">↓  then the live query draws every link, automatically  ↓</div>      <div class="vf-fan" style="grid-template-columns:repeat(3,1fr);">
+        <div class="vf-dest" style="background:var(--green-dim); border-color:var(--green);">
+<div class="vf-ico">🔗</div><div class="vf-where" style="color:var(--green);">via shared Author</div><div class="vf-what">Surfaces next to <strong>every other note Isabella appears in</strong> — past calls, intros, outreach.</div>        </div>
+        <div class="vf-dest" style="background:var(--green-dim); border-color:var(--green);">
+<div class="vf-ico">🏷️</div><div class="vf-where" style="color:var(--green);">via shared Tags</div><div class="vf-what">Links to anything tagged <code>#AIClub</code> or <code>#NoteTaking</code>.</div>        </div>
+        <div class="vf-dest" style="background:var(--green-dim); border-color:var(--green);">
+<div class="vf-ico">🧲</div><div class="vf-where" style="color:var(--green);">via shared Topics</div><div class="vf-what">Joins the cluster of notes on <strong>"Note Taking"</strong> and <strong>"AI and Technology"</strong>.</div>        </div>
+      </div>
+    </div>
+<p class="vf-foot">So the conversation doesn't sit in one folder hoping to be found. It lives in <strong>four places at once</strong>, and a saved query keeps it stitched into everything related — so it resurfaces exactly when something connected comes up, months later.</p>  </div>
+</section>
+
+<section class="oneline">
+  <div class="wrap">
+    <p class="serif">Don't file into folders. File into <em>metadata</em> — a fixed topic list, CamelCase entity tags, an author field — then let a saved query do the cross-referencing for you.</p>
+<p class="tiny">That's the end part. The transcription pipeline gets you to a raw file; the five-step pass and the live query are what make it permanent.</p>  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+<p class="mono">grounded in the actual /transcript pipeline · ~400 transcripts · flat folders + metadata + live queries</p><p style="margin-top:8px;">Happy to walk you through any stage live.</p>  </div>
+</footer>
+
+</body>
+</html>

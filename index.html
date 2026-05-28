@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matthew Isotta · Documents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#faf8f5; --bg-card:#ffffff; --bg-hover:#f5f2ee; --bg-inset:#f0ece6;
+    --border:#e8e2d9; --border-strong:#d4cdc2;
+    --text:#2c2520; --text-secondary:#6f655c; --text-tertiary:#a69e94;
+    --wine:#8b2252; --wine-dim:rgba(139,34,82,.08); --wine-light:#a63a6a;
+    --green:#2d7a4f; --green-dim:rgba(45,122,79,.08);
+    --amber:#b8860b; --amber-dim:rgba(184,134,11,.08);
+    --blue:#3d6b99; --blue-dim:rgba(61,107,153,.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{font-size:16px; scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg); color:var(--text);
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  .serif{font-family:'DM Serif Display',Georgia,serif;}
+  .mono{font-family:'DM Mono',monospace;}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:84px 0 56px; text-align:center; border-bottom:1px solid var(--border);}
+  .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:22px;}
+  h1.serif{font-size:3.1rem; line-height:1.08; letter-spacing:-.01em; max-width:780px; margin:0 auto 22px;}
+  .hero-sub{font-size:1.12rem; color:var(--text-secondary); max-width:600px; margin:0 auto;}
+  .hero-sub em{font-family:'DM Serif Display',serif; font-style:italic; color:var(--text);}
+  .for-isabella{display:inline-block; margin-top:30px; font-size:.85rem; color:var(--text-tertiary); border:1px solid var(--border-strong); border-radius:999px; padding:7px 18px;}
+
+  /* ---------- THE BIG IDEA ---------- */
+  .bigidea{padding:56px 0; text-align:center; background:var(--bg-inset); border-bottom:1px solid var(--border);}
+  .bigidea .serif{font-size:1.9rem; line-height:1.28; max-width:760px; margin:0 auto 16px;}
+  .bigidea .serif b{color:var(--wine); font-weight:400;}
+  .bigidea p{color:var(--text-secondary); max-width:600px; margin:0 auto; font-size:1.02rem;}
+
+  /* ---------- FLOW STRIP ---------- */
+  section.flow{padding:64px 0 36px;}
+  .section-head{text-align:center; margin-bottom:48px;}
+  .section-head .eyebrow{font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-tertiary); font-weight:600;}
+  .section-head h2{font-family:'DM Serif Display',serif; font-size:2.1rem; margin-top:10px; letter-spacing:-.01em;}
+  .strip{display:grid; grid-template-columns:repeat(5,1fr); gap:0; align-items:stretch; margin-bottom:8px;}
+  .stage{position:relative; padding:0 14px; text-align:center;}
+  .stage .num{width:30px; height:30px; border-radius:50%; border:1.5px solid var(--border-strong); color:var(--text-tertiary); font-size:.8rem; font-weight:600; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;}
+  .stage.turning .num{background:var(--wine); border-color:var(--wine); color:#fff;}
+  .stage .ico{font-size:1.7rem; margin-bottom:12px; line-height:1;}
+  .stage .name{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--text); margin-bottom:8px;}
+  .stage.turning .name{color:var(--wine);}
+  .stage .cap{font-size:.86rem; color:var(--text-secondary); font-style:italic; font-family:'DM Serif Display',serif;}
+  .stage .arrow{position:absolute; top:8px; right:-9px; color:var(--border-strong); font-size:1.1rem;}
+  .stage:last-child .arrow{display:none;}
+  .flow-foot{text-align:center; font-family:'DM Serif Display',serif; font-style:italic; color:var(--text-secondary); font-size:1.05rem; margin-top:30px;}
+
+  /* ---------- DEEP STAGE CARDS ---------- */
+  section.deep{padding:40px 0 24px;}
+  .stagecard{background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:38px 40px; margin-bottom:26px; position:relative; overflow:hidden;}
+  .stagecard.turning{border-color:var(--wine); border-width:1.5px; box-shadow:0 1px 0 var(--wine-dim);}
+  .stagecard .tag{position:absolute; top:0; left:0; background:var(--bg-inset); color:var(--text-tertiary); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; padding:6px 16px; border-bottom-right-radius:12px;}
+  .stagecard.turning .tag{background:var(--wine); color:#fff;}
+  .sc-head{display:flex; align-items:baseline; gap:14px; margin:18px 0 6px;}
+  .sc-head .stepno{font-family:'DM Serif Display',serif; font-size:2.4rem; color:var(--border-strong); line-height:1;}
+  .stagecard.turning .sc-head .stepno{color:var(--wine-light);}
+  .sc-head h3{font-family:'DM Serif Display',serif; font-size:1.65rem; letter-spacing:-.01em;}
+  .sc-lede{font-size:1.05rem; color:var(--text-secondary); margin-bottom:24px; max-width:680px;}
+  .sc-lede b{color:var(--text); font-weight:600;}
+  .sc-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media(max-width:720px){.sc-grid{grid-template-columns:1fr;}}
+  .mech{background:var(--bg-hover); border-radius:11px; padding:18px 20px; border:1px solid var(--border);}
+  .mech h4{font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--wine); font-weight:700; margin-bottom:9px; display:flex; align-items:center; gap:8px;}
+  .mech p{font-size:.94rem; color:var(--text-secondary);}
+  .mech p b{color:var(--text); font-weight:600;}
+  .mech code{font-family:'DM Mono',monospace; font-size:.82em; background:var(--bg-inset); padding:1px 6px; border-radius:5px; color:var(--text);}
+  .plain{margin-top:18px; background:var(--green-dim); border-left:3px solid var(--green); border-radius:0 8px 8px 0; padding:13px 18px; font-size:.92rem;}
+  .plain b{color:var(--green); font-weight:700; letter-spacing:.04em; font-size:.74rem; text-transform:uppercase; display:block; margin-bottom:4px;}
+
+  /* ---------- WHY FLAT / THE TWO PILLARS ---------- */
+  section.pillars{padding:56px 0; background:var(--bg-inset); border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-top:30px;}
+  .pillar-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:40px;}
+  @media(max-width:720px){.pillar-grid{grid-template-columns:1fr;}}
+  .pillar{background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:30px 32px;}
+  .pillar .pico{font-size:1.6rem; margin-bottom:14px;}
+  .pillar h3{font-family:'DM Serif Display',serif; font-size:1.4rem; margin-bottom:12px;}
+  .pillar p{color:var(--text-secondary); font-size:.96rem; margin-bottom:14px;}
+  .pillar ul{list-style:none; font-size:.92rem;}
+  .pillar li{padding:7px 0 7px 22px; position:relative; color:var(--text-secondary); border-top:1px solid var(--border);}
+  .pillar li:before{content:""; position:absolute; left:2px; top:14px; width:7px; height:7px; border-radius:50%; background:var(--wine);}
+  .pillar li b{color:var(--text);}
+  .pillar li code{font-family:'DM Mono',monospace; font-size:.82em; background:var(--bg-inset); padding:1px 6px; border-radius:5px;}
+
+  /* ---------- THE SCORING MACHINE ---------- */
+  section.scoring{padding:64px 0;}
+  .score-box{background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:38px 40px; margin-top:36px;}
+  .score-row{display:flex; align-items:center; gap:18px; padding:16px 0; border-top:1px solid var(--border);}
+  .score-row:first-of-type{border-top:none;}
+  .score-pts{font-family:'DM Serif Display',serif; font-size:2.1rem; color:var(--wine); min-width:64px; text-align:center;}
+  .score-row .lbl b{display:block; font-size:1rem; color:var(--text); margin-bottom:2px;}
+  .score-row .lbl span{font-size:.9rem; color:var(--text-secondary);}
+  .score-note{margin-top:24px; font-style:italic; font-family:'DM Serif Display',serif; color:var(--text-secondary); text-align:center; font-size:1.02rem;}
+
+  /* ---------- ONE LINE ---------- */
+  section.oneline{padding:72px 0; text-align:center; background:var(--wine); color:#fff;}
+  section.oneline .serif{font-size:2.2rem; line-height:1.3; max-width:760px; margin:0 auto;}
+  section.oneline .serif em{font-style:italic; color:#f2c8da;}
+  section.oneline .tiny{margin-top:24px; font-size:.84rem; color:rgba(255,255,255,.6); letter-spacing:.04em;}
+
+  /* ---------- FITS INTO VAULT ---------- */
+  section.vaultfit{padding:66px 0; background:var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .vf-intro{text-align:center; max-width:680px; margin:0 auto 46px; color:var(--text-secondary); font-size:1.04rem;}
+  .vf-intro b{color:var(--text);}
+  .vfmap{display:grid; grid-template-columns:1fr; gap:0; max-width:860px; margin:0 auto;}
+  .vf-source{background:var(--wine); color:#fff; border-radius:14px; padding:22px 28px; text-align:center; position:relative; z-index:2; box-shadow:0 6px 24px rgba(139,34,82,.18);}
+  .vf-source .vf-lab{font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:6px;}
+  .vf-source .vf-name{font-family:'DM Serif Display',serif; font-size:1.35rem;}
+  .vf-source .vf-meta{font-family:'DM Mono',monospace; font-size:.76rem; opacity:.85; margin-top:8px;}
+  .vf-stem{height:34px; width:2px; background:var(--border-strong); margin:0 auto;}
+  .vf-fan{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media(max-width:760px){.vf-fan{grid-template-columns:1fr 1fr;}}
+  .vf-dest{background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; padding:18px; text-align:center; position:relative;}
+  .vf-dest:before{content:""; position:absolute; top:-34px; left:50%; width:1.5px; height:34px; background:var(--border-strong);}
+  .vf-dest .vf-ico{font-size:1.5rem; margin-bottom:8px;}
+  .vf-dest .vf-where{font-family:'DM Mono',monospace; font-size:.72rem; color:var(--wine); font-weight:500; margin-bottom:6px;}
+  .vf-dest .vf-what{font-size:.86rem; color:var(--text-secondary);}
+  .vf-dest .vf-what b{color:var(--text);}
+  .vf-line{text-align:center; color:var(--text-tertiary); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; margin:30px 0 18px;}
+  .vf-foot{margin-top:40px; text-align:center; font-family:'DM Serif Display',serif; font-style:italic; font-size:1.12rem; color:var(--text); max-width:720px; margin-left:auto; margin-right:auto;}
+  .vf-foot b{color:var(--wine); font-style:normal; font-weight:400;}
+
+  footer{padding:40px 0 64px; text-align:center; color:var(--text-tertiary); font-size:.82rem;}
+  footer .mono{color:var(--text-secondary);}
+
+
+@page { margin: 0; }
+a.doccard{display:block; text-decoration:none; color:inherit;}
+a.doccard:hover{border-color:var(--wine);}
+.docmeta{font-family:'DM Mono',monospace; font-size:.74rem; color:var(--text-tertiary); margin-top:14px; letter-spacing:.04em;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Library</div>
+    <h1 class="serif">Matthew Isotta · Documents</h1>
+<p class="hero-sub">Working explainers, briefs, and reports from the house.</p>  </div>
+</header>
+
+<section class="deep">
+  <div class="wrap">
+    <a href="how-a-30-minute-conversation-becomes-a-permanent-asset/" class="stagecard doccard">
+      <div class="sc-head"><h3>How a 30-minute conversation becomes a permanent asset</h3></div>
+<p class="sc-lede">You asked three things: how I file, how I tag so it stays findable, and the end part — turning a raw recording into something I can pull up months later. Here is the whole machine, one stage at a time.</p>      <p class="docmeta">
+<span style="color:var(--wine); font-weight:600; text-transform:uppercase; letter-spacing:.18em;">The system, end to end</span> &nbsp;&middot;&nbsp;        published 2026-05-28
+      </p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="mono">1 document &middot; updated 2026-05-28</p>
+  </div>
+</footer>
+
+</body>
+</html>
