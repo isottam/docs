@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Downtown Manhattan hotel market — late June 2026</title>
+<meta name="description" content="Analytical report on the downtown Manhattan hotel market for late June 2026. Three findings on market dynamics (union deal, rate climb, demand drivers), a 10-hotel shortlist scored against the brief, and the refundable-now booking recommendation.
+"><meta property="og:title" content="Downtown Manhattan hotel market — late June 2026"><meta property="og:description" content="Analytical report on the downtown Manhattan hotel market for late June 2026. Three findings on market dynamics (union deal, rate climb, demand drivers), a 10-hotel shortlist scored against the brief, and the refundable-now booking recommendation.
+"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#faf8f5; --bg-card:#ffffff; --bg-hover:#f5f2ee; --bg-inset:#f0ece6;
+    --border:#e8e2d9; --border-strong:#d4cdc2;
+    --text:#2c2520; --text-secondary:#6f655c; --text-tertiary:#a69e94;
+    --wine:#8b2252; --wine-dim:rgba(139,34,82,.08); --wine-light:#a63a6a;
+    --green:#2d7a4f; --green-dim:rgba(45,122,79,.08);
+    --amber:#b8860b; --amber-dim:rgba(184,134,11,.08);
+    --blue:#3d6b99; --blue-dim:rgba(61,107,153,.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{font-size:16px; scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg); color:var(--text);
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  .serif{font-family:'DM Serif Display',Georgia,serif;}
+  .mono{font-family:'DM Mono',monospace;}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:84px 0 56px; text-align:center; border-bottom:1px solid var(--border);}
+  .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:22px;}
+  h1.serif{font-size:3.1rem; line-height:1.08; letter-spacing:-.01em; max-width:780px; margin:0 auto 22px;}
+  .hero-sub{font-size:1.12rem; color:var(--text-secondary); max-width:600px; margin:0 auto;}
+  .hero-sub em{font-family:'DM Serif Display',serif; font-style:italic; color:var(--text);}
+  .for-isabella{display:inline-block; margin-top:30px; font-size:.85rem; color:var(--text-tertiary); border:1px solid var(--border-strong); border-radius:999px; padding:7px 18px;}
+
+  /* ---------- THE BIG IDEA ---------- */
+  .bigidea{padding:56px 0; text-align:center; background:var(--bg-inset); border-bottom:1px solid var(--border);}
+  .bigidea .serif{font-size:1.9rem; line-height:1.28; max-width:760px; margin:0 auto 16px;}
+  .bigidea .serif b{color:var(--wine); font-weight:400;}
+  .bigidea p{color:var(--text-secondary); max-width:600px; margin:0 auto; font-size:1.02rem;}
+
+  /* ---------- FLOW STRIP ---------- */
+  section.flow{padding:64px 0 36px;}
+  .section-head{text-align:center; margin-bottom:48px;}
+  .section-head .eyebrow{font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-tertiary); font-weight:600;}
+  .section-head h2{font-family:'DM Serif Display',serif; font-size:2.1rem; margin-top:10px; letter-spacing:-.01em;}
+  .strip{display:grid; grid-template-columns:repeat(5,1fr); gap:0; align-items:stretch; margin-bottom:8px;}
+  .stage{position:relative; padding:0 14px; text-align:center;}
+  .stage .num{width:30px; height:30px; border-radius:50%; border:1.5px solid var(--border-strong); color:var(--text-tertiary); font-size:.8rem; font-weight:600; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;}
+  .stage.turning .num{background:var(--wine); border-color:var(--wine); color:#fff;}
+  .stage .ico{font-size:1.7rem; margin-bottom:12px; line-height:1;}
+  .stage .name{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--text); margin-bottom:8px;}
+  .stage.turning .name{color:var(--wine);}
+  .stage .cap{font-size:.86rem; color:var(--text-secondary); font-style:italic; font-family:'DM Serif Display',serif;}
+  .stage .arrow{position:absolute; top:8px; right:-9px; color:var(--border-strong); font-size:1.1rem;}
+  .stage:last-child .arrow{display:none;}
+  .flow-foot{text-align:center; font-family:'DM Serif Display',serif; font-style:italic; color:var(--text-secondary); font-size:1.05rem; margin-top:30px;}
+
+  /* ---------- DEEP STAGE CARDS ---------- */
+  section.deep{padding:40px 0 24px;}
+  .stagecard{background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:38px 40px; margin-bottom:26px; position:relative; overflow:hidden;}
+  .stagecard.turning{border-color:var(--wine); border-width:1.5px; box-shadow:0 1px 0 var(--wine-dim);}
+  .stagecard .tag{position:absolute; top:0; left:0; background:var(--bg-inset); color:var(--text-tertiary); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; padding:6px 16px; border-bottom-right-radius:12px;}
+  .stagecard.turning .tag{background:var(--wine); color:#fff;}
+  .sc-head{display:flex; align-items:baseline; gap:14px; margin:18px 0 6px;}
+  .sc-head .stepno{font-family:'DM Serif Display',serif; font-size:2.4rem; color:var(--border-strong); line-height:1;}
+  .stagecard.turning .sc-head .stepno{color:var(--wine-light);}
+  .sc-head h3{font-family:'DM Serif Display',serif; font-size:1.65rem; letter-spacing:-.01em;}
+  .sc-lede{font-size:1.05rem; color:var(--text-secondary); margin-bottom:24px; max-width:680px;}
+  .sc-lede b{color:var(--text); font-weight:600;}
+  .sc-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media(max-width:720px){.sc-grid{grid-template-columns:1fr;}}
+  .mech{background:var(--bg-hover); border-radius:11px; padding:18px 20px; border:1px solid var(--border);}
+  .mech h4{font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--wine); font-weight:700; margin-bottom:9px; display:flex; align-items:center; gap:8px;}
+  .mech p{font-size:.94rem; color:var(--text-secondary);}
+  .mech p b{color:var(--text); font-weight:600;}
+  .mech code{font-family:'DM Mono',monospace; font-size:.82em; background:var(--bg-inset); padding:1px 6px; border-radius:5px; color:var(--text);}
+  .plain{margin-top:18px; background:var(--green-dim); border-left:3px solid var(--green); border-radius:0 8px 8px 0; padding:13px 18px; font-size:.92rem;}
+  .plain b{color:var(--green); font-weight:700; letter-spacing:.04em; font-size:.74rem; text-transform:uppercase; display:block; margin-bottom:4px;}
+
+  /* ---------- WHY FLAT / THE TWO PILLARS ---------- */
+  section.pillars{padding:56px 0; background:var(--bg-inset); border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-top:30px;}
+  .pillar-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:40px;}
+  @media(max-width:720px){.pillar-grid{grid-template-columns:1fr;}}
+  .pillar{background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:30px 32px;}
+  .pillar .pico{font-size:1.6rem; margin-bottom:14px;}
+  .pillar h3{font-family:'DM Serif Display',serif; font-size:1.4rem; margin-bottom:12px;}
+  .pillar p{color:var(--text-secondary); font-size:.96rem; margin-bottom:14px;}
+  .pillar ul{list-style:none; font-size:.92rem;}
+  .pillar li{padding:7px 0 7px 22px; position:relative; color:var(--text-secondary); border-top:1px solid var(--border);}
+  .pillar li:before{content:""; position:absolute; left:2px; top:14px; width:7px; height:7px; border-radius:50%; background:var(--wine);}
+  .pillar li b{color:var(--text);}
+  .pillar li code{font-family:'DM Mono',monospace; font-size:.82em; background:var(--bg-inset); padding:1px 6px; border-radius:5px;}
+
+  /* ---------- THE SCORING MACHINE ---------- */
+  section.scoring{padding:64px 0;}
+  .score-box{background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:38px 40px; margin-top:36px;}
+  .score-row{display:flex; align-items:center; gap:18px; padding:16px 0; border-top:1px solid var(--border);}
+  .score-row:first-of-type{border-top:none;}
+  .score-pts{font-family:'DM Serif Display',serif; font-size:2.1rem; color:var(--wine); min-width:64px; text-align:center;}
+  .score-row .lbl b{display:block; font-size:1rem; color:var(--text); margin-bottom:2px;}
+  .score-row .lbl span{font-size:.9rem; color:var(--text-secondary);}
+  .score-note{margin-top:24px; font-style:italic; font-family:'DM Serif Display',serif; color:var(--text-secondary); text-align:center; font-size:1.02rem;}
+
+  /* ---------- ONE LINE ---------- */
+  section.oneline{padding:72px 0; text-align:center; background:var(--wine); color:#fff;}
+  section.oneline .serif{font-size:2.2rem; line-height:1.3; max-width:760px; margin:0 auto;}
+  section.oneline .serif em{font-style:italic; color:#f2c8da;}
+  section.oneline .tiny{margin-top:24px; font-size:.84rem; color:rgba(255,255,255,.6); letter-spacing:.04em;}
+
+  /* ---------- FITS INTO VAULT ---------- */
+  section.vaultfit{padding:66px 0; background:var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .vf-intro{text-align:center; max-width:680px; margin:0 auto 46px; color:var(--text-secondary); font-size:1.04rem;}
+  .vf-intro b{color:var(--text);}
+  .vfmap{display:grid; grid-template-columns:1fr; gap:0; max-width:860px; margin:0 auto;}
+  .vf-source{background:var(--wine); color:#fff; border-radius:14px; padding:22px 28px; text-align:center; position:relative; z-index:2; box-shadow:0 6px 24px rgba(139,34,82,.18);}
+  .vf-source .vf-lab{font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:6px;}
+  .vf-source .vf-name{font-family:'DM Serif Display',serif; font-size:1.35rem;}
+  .vf-source .vf-meta{font-family:'DM Mono',monospace; font-size:.76rem; opacity:.85; margin-top:8px;}
+  .vf-stem{height:34px; width:2px; background:var(--border-strong); margin:0 auto;}
+  .vf-fan{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media(max-width:760px){.vf-fan{grid-template-columns:1fr 1fr;}}
+  .vf-dest{background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; padding:18px; text-align:center; position:relative;}
+  .vf-dest:before{content:""; position:absolute; top:-34px; left:50%; width:1.5px; height:34px; background:var(--border-strong);}
+  .vf-dest .vf-ico{font-size:1.5rem; margin-bottom:8px;}
+  .vf-dest .vf-where{font-family:'DM Mono',monospace; font-size:.72rem; color:var(--wine); font-weight:500; margin-bottom:6px;}
+  .vf-dest .vf-what{font-size:.86rem; color:var(--text-secondary);}
+  .vf-dest .vf-what b{color:var(--text);}
+  .vf-line{text-align:center; color:var(--text-tertiary); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; margin:30px 0 18px;}
+  .vf-foot{margin-top:40px; text-align:center; font-family:'DM Serif Display',serif; font-style:italic; font-size:1.12rem; color:var(--text); max-width:720px; margin-left:auto; margin-right:auto;}
+  .vf-foot b{color:var(--wine); font-style:normal; font-weight:400;}
+
+  footer{padding:40px 0 64px; text-align:center; color:var(--text-tertiary); font-size:.82rem;}
+  footer .mono{color:var(--text-secondary);}
+
+
+
+/* PDF-only adjustments — page size is driven by render.py (measures rendered
+   document height + sets a single tall page) so we just disable break logic. */
+@page { margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+<div class="kicker">NYC · 21–28 June 2026</div>    <h1 class="serif">Downtown Manhattan hotel market — late June 2026</h1>
+<p class="hero-sub">Market analysis + shortlist scoring + recommendation. Three forces have shifted in the last two weeks; the case for booking refundable now has materially strengthened.</p><div class="for-isabella">Decision support · solo 7-night downtown stay · £3–4k budget</div>  </div>
+</header>
+
+
+<section class="bigidea">
+  <div class="wrap">
+<p class="serif"><strong>Recommendation:</strong> book a fully-refundable rate this week at one of three hotels — Walker Hotel Greenwich Village, The Ludlow, or Arlo SoHo. Re-check weekly until 17 June; rebook only on a clear win.</p><p>Three forces have aligned in the last two weeks that all point to rates rising rather than falling from here. The case for waiting has materially weakened. The 8–15% premium for a refundable rate is the price of optionality — it preserves the right to walk away if anything cheaper appears, without committing.</p>  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">Three findings</div><h2>What changed in the last two weeks</h2>    </div>
+    <div class="stagecard">
+<div class="tag">Finding 1 · Supply-side risk reduced</div>      <div class="sc-head">
+<span class="stepno">F1</span>        <h3>NYC hotel workers' union ratified an 8-year deal (18 May)</h3>
+      </div>
+<p class="sc-lede">The strike risk that had been suppressing forward bookings is now gone. Demand that was sitting on the sidelines waiting for resolution is back in market — and hotel owners have a contractually-locked cost increase to absorb.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>The deal terms</h4><p>The contract runs through 2034 and adds ~15% in annual labour costs to NYC hotels. Owners have publicly signalled that rates will rise to absorb the cost — typical pass-through to guests is 6–12 months out.</p>        </div>
+        <div class="mech">
+<h4>The forward-booking implication</h4><p>Bookings that were paused on strike uncertainty have re-entered the market in the last 10–14 days. Booking velocity for July–September is up notably according to industry reporting. June dates are tightening from both sides — old paused demand + new fresh demand.</p>        </div>
+      </div>
+<div class="plain"><b>In plain terms</b>The cheap-because-uncertain era is over. Rates have a floor now, not a ceiling.</div>    </div>
+    <div class="stagecard">
+<div class="tag">Finding 2 · Rates climbing six weeks running</div>      <div class="sc-head">
+<span class="stepno">F2</span>        <h3>National ADR up 3.9% in the most recent week</h3>
+      </div>
+<p class="sc-lede">CoStar's national weekly hotel data has now shown six straight weeks of rising rates. Hotel revenue managers respond to consecutive-week trends faster than to single-week moves. The trend is established enough that further increases through June are the base case, not the upside case.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>What "six weeks" signals</h4><p>Single-week rate increases are noise. Three consecutive weeks is a trend revenue managers act on. Six consecutive weeks is a trend they've already acted on and are now extrapolating forward — meaning forward rates (June, July) are already higher than current observable rates suggest.</p>        </div>
+        <div class="mech">
+<h4>The downtown delta</h4><p>Downtown Manhattan typically tracks 5–10% above the national index in summer; for tight inventory pockets (sub-20th, sub-200 rooms), the delta can be wider. The boutique-shortlist hotels here have small room counts and limited ability to flex on rate.</p>        </div>
+      </div>
+<div class="plain"><b>In plain terms</b>The market signal is unambiguous: rates are rising, not falling. Wait-and-see is now a costly strategy, not a free one.</div>    </div>
+    <div class="stagecard">
+<div class="tag">Finding 3 · Weekend demand spike</div>      <div class="sc-head">
+<span class="stepno">F3</span>        <h3>Pride + World Cup match collide on the 27th–28th</h3>
+      </div>
+<p class="sc-lede">The back half of the stay overlaps two demand drivers. <strong>NYC Pride March (Sunday 28 June)</strong> — the annual main event, route passes through the Village and Flatiron, downtown closed to traffic for much of the day. <strong>Panama vs England at MetLife (Saturday 27 June, 5pm ET)</strong> — World Cup group-stage match with ~50,000 fans, English support travelling.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>Inventory tightening</h4><p>Both events drive late-June inventory pressure — Pride from international LGBTQ+ visitors, the match from English fans staying at least Friday–Sunday. Downtown is the Pride zone; midtown is the match zone. The shortlist hotels sit in the Pride catchment.</p>        </div>
+        <div class="mech">
+<h4>Operational implications</h4><p>Pride Sunday street closures will slow Manhattan-to-airport transit on the 28th. Plan an early-morning departure (before 10am ideally). The match itself is in New Jersey; downtown Manhattan stays calmer than midtown on Saturday evening even with the spike in tourist count.</p>        </div>
+      </div>
+<div class="plain"><b>In plain terms</b>Late June was always going to be busy. With strike risk gone, the demand-side pressure now feeds through directly to rates.</div>    </div>
+  </div>
+</section>
+
+<section class="scoring">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">Shortlist scoring</div><h2>Ten hotels scored against the brief</h2>    </div>
+<p style="text-align:center; max-width:660px; margin:0 auto; color:var(--text-secondary);">Each hotel scored against four criteria — sleep quality (×3), walkable downtown location (×2), solo-friendly social spaces (×2), fits the budget band (×1). Maximum score 8/8. Top three are recommended; bottom four are situational only.</p>    <div class="score-box">
+      <div class="score-row">
+        <div class="score-pts">8/8</div>
+        <div class="lbl"><b>Walker Hotel Greenwich Village</b><span><strong>RECOMMENDED — top pick.</strong> Top mark on all four criteria. Quiet residential block; 5 min to Washington Square; doorman; King at $500–660.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">7/8</div>
+        <div class="lbl"><b>Arlo SoHo</b><span><strong>RECOMMENDED — best value.</strong> Loses one on social (smaller lobby). Wins on value (Queen Terrace at $370–470). Built around solo travellers.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">6/8</div>
+        <div class="lbl"><b>The Ludlow Hotel</b><span><strong>RECOMMENDED — best buzz.</strong> Loses one on sleep (Ludlow St weekend noise; mitigated by courtyard-facing high floor) and one on budget (sweet-spot rooms at top of band).</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">5/8</div>
+        <div class="lbl"><b>Hotel Indigo LES</b><span>Strong runner-up. Biggest standard rooms on the list (Premium King High Floor 320 sf). Less boutique-charming than Ludlow next door but better per-pound.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">5/8</div>
+        <div class="lbl"><b>The Standard, East Village</b><span>Polished, design-led. Deluxe King = real upgrade. NYU-adjacent — busy and safe at night. Cooper Square block.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">4/8</div>
+        <div class="lbl"><b>The Marlton</b><span>Genuine Village charm + free breakfast. Petite Full (110 sf) too small for 7 nights — go Deluxe Queen minimum. Loses points on per-pound and on room size.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">4/8</div>
+        <div class="lbl"><b>Walker Hotel Tribeca</b><span>Sister to GV but more sophisticated and quieter. Tribeca empties at night — would cab back from West Village bars. Quieter sleep, less neighbourhood action.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">3/8</div>
+        <div class="lbl"><b>The Roxy Hotel</b><span>Self-contained — The Django + Roxy Cinema + Paul's. Nite Owl King at $299 is non-refundable and literally above a nightclub. Standard rooms fine; specific use case only.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">3/8</div>
+        <div class="lbl"><b>citizenM Bowery</b><span>Cheapest decent ($220–400). Pod rooms, lovely rooftop. Function over personality. Good if budget is the dominant constraint.</span></div>
+      </div>
+      <div class="score-row">
+        <div class="score-pts">2/8</div>
+        <div class="lbl"><b>Moxy NYC LES</b><span>Party hotel above Loosie's nightclub. Bass into small hours. Skip bunk-bed configs (built for groups). For a different trip.</span></div>
+      </div>
+<div class="score-note">Scoring is weighted to reflect what matters most on a long solo stay: sleep first, then walkable location, then solo-friendly spaces, then budget. A 7-night stay punishes small rooms and noisy streets more than a 2-night stay would.</div>    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">The booking strategy</div><h2>Why refundable-now, not non-refundable-now and not refundable-later</h2>    </div>
+    <div class="pillar-grid">
+      <div class="pillar">
+<div class="pico">🧮</div><h3>The arithmetic of the refundable premium</h3><p>Refundable rates are typically 8–15% above non-refundable. The question is whether that premium is worth paying. The answer this week is yes — because the value of optionality is unusually high.</p>        <ul>
+<li><strong>Premium cost:</strong> ~$40–80/night above non-refundable = ~$280–560 over 7 nights.</li><li><strong>Optionality value:</strong> the right to rebook if rates drop $30+/night, or to cancel for any other reason.</li><li><strong>Break-even:</strong> a single $30/night rate drop over 7 nights = $210 saved — almost covering the premium itself. Two such drops, or one bigger drop, are net wins.</li><li><strong>Risk asymmetry:</strong> the premium is bounded ($560 worst case); the downside of locking a non-refundable rate is unbounded if anything else changes.</li>        </ul>
+      </div>
+      <div class="pillar">
+<div class="pico">🔁</div><h3>Why not "refundable later"</h3><p>The instinct to wait a week or two before booking even a refundable rate seems harmless — the rate is refundable either way. But three things make waiting worse than acting now.</p>        <ul>
+<li><strong>Six straight weeks of rate increases</strong> mean the rate available next week is statistically higher than the rate this week.</li><li><strong>Top-three inventory is small</strong> — Walker GV has ~113 rooms; Ludlow ~175; Arlo SoHo a few hundred. Sweet-spot rooms (high floor, rear-facing) sell out earliest.</li><li><strong>The strategy works backward.</strong> The refundable rate you book today becomes the baseline you're monitoring against. Wait a week and your baseline is already higher.</li>        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oneline">
+  <div class="wrap">
+    <p class="serif">Book one of three this week, refundable. Monitor weekly. Walk away free if rates drop. The market is moving against waiting.</p>
+<p class="tiny">Brief version at <a href="../manhattan-hotels-june-2026/">/manhattan-hotels-june-2026/</a>; full explainer at <a href="../manhattan-hotels-june-2026-guide/">/manhattan-hotels-june-2026-guide/</a>.</p>  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+<p class="mono">prepared 30 May 2026 · indicative rates from Booking.com / Kayak / Hotels.com (late May) · not confirmed quotes · verify at booking link</p><p style="margin-top:8px;">Long-form source document with all ten hotels in full detail is on Matthew's Mac.</p>  </div>
+</footer>
+
+</body>
+</html>
