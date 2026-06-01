@@ -514,7 +514,7 @@
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-      <td><em class="not-subscribed">available — not subscribed</em></td>
+      <td><em class="not-subscribed">via Jennie — forward to mvault</em></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-ft">FT</span></td>
@@ -694,12 +694,16 @@
 <td>The Telegraph (live + validated 2026-06-01 via Playwright + JSON feed API, 40 articles first sweep). FT (live 2026-05-23 via Playwright). NYT + Bloomberg + Times (live + validated 2026-06-01 via AppleScript-driven Safari, 10 articles first sweep — see articles D5). WSJ deferred until subscription renews.</td>
 </tr>
 <tr>
-<td><strong>The Times newsletters — blocked on account access.</strong></td>
+<td><strong>The Telegraph newsletters — Jennie's account; forward to mvault.</strong></td>
+<td>Telegraph subscription is in Jennie's name + uses her email, so any newsletters she's already subscribed to are landing in her inbox now. Quickest activation: set up a forwarding rule in Jennie's Outlook for any Telegraph sender domain (e.g. <code>*@telegraph.co.uk</code>) → <code>mvault@isotta.net</code>. The mvault rule already routes that to <code>Inbox/Articles</code>, and the daemon picks it up on the next 15-min tick. No new daemon work needed — URL-only fallback handles it (Phase 2 multi-card parser later for richer extraction).</td>
+</tr>
+<tr>
+<td><strong>The Times newsletters — blocked on Sophie's college email.</strong></td>
 <td>The household Times subscription sits under Sophie's college email; ~6–7 newsletters are worth subscribing to (Red Box, Saturday Sip, Times Magazine, plus topic feeds) but registering them requires either reassigning the subscription to a new email or setting a Times-side forward rule on her account. Pick this up when Sophie is back (~3–4 weeks).</td>
 </tr>
 <tr>
-<td><strong>Telegraph + NYT newsletters — subscribable now.</strong></td>
-<td>Unlike the Times situation above, neither Telegraph nor NYT subscriptions are blocked on anyone else's account. The Telegraph has Front Page Daily / The Edit / per-section feeds; NYT has dozens including The Morning + topic feeds for any tag. Subscribe → set up Outlook rule routing → daemon picks up via URL-only fallback (Phase 2 multi-card parser later).</td>
+<td><strong>NYT newsletters — subscribable directly.</strong></td>
+<td>NYT account isn't tied to a family member's email; you can subscribe to NYT newsletters under your own email anytime. ~Dozens of options — The Morning, Opinion Today, topic feeds for any tag. Subscribe → Outlook rule routing the sender domain → daemon picks up via URL-only fallback.</td>
 </tr>
 <tr>
 <td><strong>Future channels on the roadmap.</strong></td>
@@ -718,7 +722,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.11 · 2026-06-01 (section-row col 1 transparent — white section bar no longer extends over publication-name column)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.12 · 2026-06-01 (Telegraph row reflects Jennie-account + forwarding-rule path; Notes rows for Telegraph + Times + NYT each get the right "how to activate" guidance)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
