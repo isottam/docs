@@ -254,40 +254,112 @@
     border-left:1px solid var(--border);
   }
 
-  /* Column 7 (Emailed Topics) — visually detached from the rest of the
-     table. Faux "gap" in the page background colour is rendered via an
-     inset box-shadow on the cell's left edge, with extra padding-left so
-     the cell content clears the shadow. Gives the impression of a separate
-     floating column off to the right. */
+  /* Column 7 — visually detached from the rest of the table. Faux "gap"
+     in the page background colour rendered via inset box-shadow on the
+     cell's left edge, with extra padding-left so the cell content clears
+     the shadow. Bumped 22 → 40px (2026-06-01) so the detachment reads
+     more clearly. Applied to every cell in col 7 — section-row header,
+     icons-row header, body cells. */
   .bigidea table th:nth-child(7),
   .bigidea table td:nth-child(7) {
-    box-shadow:inset 22px 0 0 var(--background);
-    padding-left:36px;
+    box-shadow:inset 40px 0 0 var(--background);
+    padding-left:54px;
     border-left:none;
   }
 
-  /* Two-section table headings sitting above the bigidea table.
-     Left heading labels the device-columns block ("For individual articles");
-     right heading labels the detached Emailed Topics column. Justified at
-     opposite ends of the table width so each visually anchors over its
-     column group. */
-  .article-table-sections {
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    margin:30px 0 -6px 0;
-    padding:0 8px;
-  }
-  .article-table-sections h4 {
-    margin:0;
+  /* Section-row — top row of the table head. Labels the column groups:
+       "For individual articles"  (colspan=6 over cols 1-6)
+       "For newsletters, topics, and writers"  (col 7, detached)
+     Looks like floating headings above each column group; no inset bg,
+     no bottom-border (the icons-row below carries the divider). */
+  .bigidea table .section-row th {
+    background:var(--bg-card);
+    border-bottom:none;
+    text-align:left;
     font-family:'DM Sans',sans-serif;
     font-weight:700;
-    font-size:1.02rem;
+    font-size:1.0rem;
     letter-spacing:.01em;
     color:var(--text);
+    padding:18px 22px 10px 22px;
   }
-  .article-table-sections .for-newsletters {
-    text-align:right;
+  .bigidea table .section-row .for-newsletters {
+    /* Matches col-7 detachment (above) so the label visually anchors
+       over the detached column. */
+    box-shadow:inset 40px 0 0 var(--background);
+    padding-left:54px;
+  }
+  /* Icons-row (second header row) keeps the border-bottom that the
+     standard `th` rule provides, since section-row above no longer
+     carries it. */
+
+  /* ---------- Publication brand pills ----------
+     Each `.logo-<publisher>` is a CSS-only branded identifier — brand-
+     appropriate colors + typography on a pill shape — used in column 1
+     of the article-capture table in place of plain text publication
+     names. These are identifying tokens, not reproductions of trademark
+     logos: each renders the publication's short name in the publication's
+     iconic colors. */
+  .logo-pub {
+    display:inline-block;
+    padding:3px 9px;
+    font-weight:700;
+    font-size:.95rem;
+    border-radius:3px;
+    letter-spacing:.01em;
+    line-height:1.4;
+    white-space:nowrap;
+  }
+  /* The Telegraph — print masthead navy + serif italic */
+  .logo-telegraph {
+    background:#001E62; color:#fff;
+    font-family:'DM Serif Display',serif;
+    font-style:italic;
+  }
+  /* FT — iconic salmon-pink page color + serif italic */
+  .logo-ft {
+    background:#FFF1E5; color:#000;
+    font-family:'DM Serif Display',serif;
+    font-style:italic;
+  }
+  /* The Times — print masthead black + serif */
+  .logo-times {
+    background:#1B1B1B; color:#fff;
+    font-family:'DM Serif Display',serif;
+  }
+  /* NYT — masthead black + serif italic */
+  .logo-nyt {
+    background:#000; color:#fff;
+    font-family:'DM Serif Display',serif;
+    font-style:italic;
+  }
+  /* Bloomberg — black with orange accent */
+  .logo-bloomberg {
+    background:#000; color:#FF8000;
+    font-family:'DM Sans',sans-serif;
+  }
+  /* WSJ — black masthead + serif */
+  .logo-wsj {
+    background:#000; color:#fff;
+    font-family:'DM Serif Display',serif;
+  }
+  /* Apple News — Apple's brand red */
+  .logo-applenews {
+    background:#FA233B; color:#fff;
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+  }
+  /* Substack — Substack orange */
+  .logo-substack {
+    background:#FF6719; color:#fff;
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+  }
+  /* Generic web page — neutral */
+  .logo-generic {
+    background:var(--bg-inset); color:var(--text-secondary);
+    font-family:'DM Sans',sans-serif;
+    font-weight:500;
   }
   /* Email column header — small label above the envelope icon */
   .bigidea table th .email-label {
@@ -395,107 +467,107 @@
 
 <section class="bigidea">
   <div class="wrap">
-<p class="serif">Capturing an article you're reading right now</p><p><div class="article-table-sections">
-  <h4 class="for-individual">For individual articles</h4>
-  <h4 class="for-newsletters">For newsletters, topics &amp; writers</h4>
-</div>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: center;"><span class="combo-iphone-app"></span></th>
-<th style="text-align: center;"><span class="combo-ipad-app"></span></th>
-<th style="text-align: center;"><span class="combo-iphone-safari"></span></th>
-<th style="text-align: center;"><span class="combo-ipad-safari"></span></th>
-<th style="text-align: center;"><span class="combo-mac-browsers"></span></th>
-<th style="text-align: center;"><span class="icon-email"></span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>The Telegraph</strong></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-<td style="text-align: center;">❓</td>
-</tr>
-<tr>
-<td><strong>FT</strong></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-<td style="text-align: center;">⏳</td>
-</tr>
-<tr>
-<td><strong>The Times</strong></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;">❓</td>
-</tr>
-<tr>
-<td><strong>NYT</strong></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;">❓</td>
-</tr>
-<tr>
-<td><strong>Bloomberg</strong></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;">⏳</td>
-</tr>
-<tr>
-<td><strong>WSJ</strong></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><span class="icon-obs"></span></td>
-<td style="text-align: center;">⏳</td>
-</tr>
-<tr>
-<td><strong>Apple News</strong></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;">n/a</td>
-<td style="text-align: center;">n/a</td>
-<td style="text-align: center;">n/a</td>
-<td style="text-align: center;">n/a</td>
-</tr>
-<tr>
-<td><strong>Substack</strong></td>
-<td style="text-align: center;"><span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><span class="icon-shortcut"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;"><span class="icon-shortcut"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;"><span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-<td style="text-align: center;"><span class="icon-email"></span></td>
-</tr>
-<tr>
-<td><strong>Generic web page</strong></td>
-<td style="text-align: center;">n/a</td>
-<td style="text-align: center;">n/a</td>
-<td style="text-align: center;"><span class="icon-obs"></span></td>
-<td style="text-align: center;"><span class="icon-obs"></span></td>
-<td style="text-align: center;"><span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-<td style="text-align: center;">n/a</td>
-</tr>
-</tbody>
+<p><table class="article-capture">
+  <thead>
+    <tr class="section-row">
+      <th colspan="6" class="for-individual">For individual articles</th>
+      <th class="for-newsletters">For newsletters, topics, and writers</th>
+    </tr>
+    <tr class="icons-row">
+      <th></th>
+      <th><span class="combo-iphone-app"></span></th>
+      <th><span class="combo-ipad-app"></span></th>
+      <th><span class="combo-iphone-safari"></span></th>
+      <th><span class="combo-ipad-safari"></span></th>
+      <th><span class="combo-mac-browsers"></span></th>
+      <th><span class="icon-email"></span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="logo-pub logo-telegraph">The Telegraph</span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
+      <td>❓</td>
+    </tr>
+    <tr>
+      <td><span class="logo-pub logo-ft">FT</span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
+      <td>⏳</td>
+    </tr>
+    <tr>
+      <td><span class="logo-pub logo-times">The Times</span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
+      <td>❓</td>
+    </tr>
+    <tr>
+      <td><span class="logo-pub logo-nyt">NYT</span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
+      <td>❓</td>
+    </tr>
+    <tr>
+      <td><span class="logo-pub logo-bloomberg">Bloomberg</span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span></td>
+      <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
+      <td>⏳</td>
+    </tr>
+    <tr>
+      <td><span class="logo-pub logo-wsj">WSJ</span></td>
+      <td><em>—</em></td>
+      <td><em>—</em></td>
+      <td><em>—</em></td>
+      <td><em>—</em></td>
+      <td><span class="icon-obs"></span></td>
+      <td>⏳</td>
+    </tr>
+    <tr>
+      <td><span class="logo-pub logo-applenews">Apple News</span></td>
+      <td><em>—</em></td>
+      <td><em>—</em></td>
+      <td>n/a</td>
+      <td>n/a</td>
+      <td>n/a</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <td><span class="logo-pub logo-substack">Substack</span></td>
+      <td><span class="icon-shortcut"></span></td>
+      <td><span class="icon-shortcut"></span></td>
+      <td><span class="icon-shortcut"></span> <span class="icon-obs"></span></td>
+      <td><span class="icon-shortcut"></span> <span class="icon-obs"></span></td>
+      <td><span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
+      <td><span class="icon-email"></span></td>
+    </tr>
+    <tr>
+      <td><span class="logo-pub logo-generic">Generic web page</span></td>
+      <td>n/a</td>
+      <td>n/a</td>
+      <td><span class="icon-obs"></span></td>
+      <td><span class="icon-obs"></span></td>
+      <td><span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
+      <td>n/a</td>
+    </tr>
+  </tbody>
 </table>
+
 <table>
 <thead>
 <tr>
@@ -623,7 +695,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.7 · 2026-06-01 (Apple News closed; "for individual articles" / "for newsletters, topics &amp; writers" section headings above table)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.8 · 2026-06-01 (section labels embedded in table head with colspan; column 7 detached with bigger gray gap; publication names rendered as branded pills)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
