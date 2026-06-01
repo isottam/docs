@@ -26,12 +26,31 @@
        cream not white; also covers the area above status bar when
        added to iPhone Home Screen as a standalone web app. */
     background:var(--bg);
+    min-height:100%;
+    color-scheme:light;  /* prevent iOS auto-dark-inversion of the bg */
   }
   body{
     font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
     background:var(--bg); color:var(--text);
     -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     line-height:1.6;
+    /* iPhone: ensure bg fills viewport even when content is short or
+       URL bar collapses. 100dvh = dynamic viewport height (iOS 16+). */
+    min-height:100vh;
+    min-height:100dvh;
+    /* Prevent horizontal page-scroll when wide content (article-capture
+       table) overflows narrow viewports — the page stays viewport-wide;
+       wide content scrolls within its own container. */
+    overflow-x:hidden;
+  }
+  /* Article-capture table can be wider than an iPhone viewport — let it
+     scroll horizontally inside its own container rather than widening
+     the page. */
+  .bigidea p:has(table),
+  .bigidea > .article-capture,
+  .bigidea div:has(> table.article-capture) {
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
   }
   .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
   .serif{font-family:'DM Serif Display',Georgia,serif;}
