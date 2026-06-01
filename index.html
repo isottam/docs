@@ -45,13 +45,29 @@
    * iPad (768px+) is media-queried out — Playwright verification at
    * 768x1024 and 1024x1366 confirmed no regression.
    * =================================================================== */
+  /* Article-capture table is intrinsically 828px wide. On any viewport
+     narrower than ~884px (= 828 + .wrap's 56px padding), the table would
+     extend past the .wrap's right padding and butt against the .bigidea
+     section's right edge — leaving no visible gray "border" on the right
+     to match the Notes + legend tables. Give every .wrap containing a
+     table its own local horizontal scroll, at ALL viewport widths. On
+     Mac (1080px+) this is a no-op (table fits with room to spare); on
+     iPad portrait (768) + iPhone portrait (393) + iPhone landscape
+     (852-932) it lets the table scroll within the wrap's content area
+     while preserving the wrap's right padding as gray border. */
+  .bigidea .wrap:has(> table),
+  section .wrap:has(> table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* iPhone portrait belt: html/body overflow-x:hidden prevents any
+     residual document-widening from edge cases the wrap-scroll above
+     might not catch (long unbreakable code spans outside of <table>,
+     etc.). Only needed at the smallest viewport where overflow risk
+     is highest. */
   @media (max-width: 480px) {
     html, body { overflow-x: hidden; }
-    .bigidea .wrap:has(> table),
-    section .wrap:has(> table) {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
   }
 
   /* Notes-style tables (any .bigidea <table> that isn't the article-capture
