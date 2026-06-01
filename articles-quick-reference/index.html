@@ -272,7 +272,7 @@
      icons-row header, body cells. */
   .bigidea table th:nth-child(7),
   .bigidea table td:nth-child(7) {
-    box-shadow:inset 40px 0 0 var(--bg);
+    box-shadow:inset 40px 0 0 var(--background);
     padding-left:54px;
     border-left:none;
   }
@@ -306,20 +306,29 @@
      cells (see `.article-capture` rules below). */
   .bigidea table .section-row .section-empty {
     padding:0;
-    background:var(--bg);
+    background:var(--background);
     border:none;
   }
 
-  /* Article-capture table chrome rewrite — table's outer top-left
-     border + radius dropped so col 1 of the section-row is truly
-     invisible; chrome moved onto the first non-empty section-row cell
-     ("For individual articles" label) + the icons-row first cell + body
-     first cell. Bottom-left rounded corner stays on the table via the
-     existing border-radius. */
+  /* Article-capture table chrome rewrite — table itself has TRANSPARENT
+     background (was var(--bg-card)/white), so the section-empty cell at
+     top-left actually shows the page bg behind it. Without this, even
+     with section-empty having `background: transparent`, the TABLE's
+     own white bg painted through that cell area. Cells that should
+     appear white get explicit backgrounds. */
   .bigidea table.article-capture {
+    background:transparent;
     border-top:none;
     border-left:none;
     border-top-left-radius:0;
+  }
+  /* Body td cells (other than col 1 which uses bg-hover) need explicit
+     white bg now that the table itself is transparent. */
+  .bigidea table.article-capture tbody td {
+    background:var(--bg-card);
+  }
+  .bigidea table.article-capture tbody td:first-child {
+    background:var(--bg-hover);
   }
   /* "For individual articles" cell — the new visible top-left of the
      table; gets the rounded corner + the top + left borders. */
@@ -353,7 +362,7 @@
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors
        over the detached column. */
-    box-shadow:inset 40px 0 0 var(--bg);
+    box-shadow:inset 40px 0 0 var(--background);
     padding-left:54px;
   }
   /* "available — not subscribed" — muted italic text for col-7 cells
@@ -770,7 +779,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.21 · 2026-06-01 (iPad white-bar fix only — undefined var(--background) → var(--bg) at 3 sites; cell-chrome rewrite stays out; iPhone parked as separate workstream)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.22 · 2026-06-01 (restored exact v7.14 system.css — last known iPad-good baseline; iPhone parked as separate workstream)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
