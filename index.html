@@ -299,16 +299,25 @@
     border:none;
   }
 
-  /* Article-capture table chrome rewrite — table's outer top-left
-     border + radius dropped so col 1 of the section-row is truly
-     invisible; chrome moved onto the first non-empty section-row cell
-     ("For individual articles" label) + the icons-row first cell + body
-     first cell. Bottom-left rounded corner stays on the table via the
-     existing border-radius. */
+  /* Article-capture table chrome rewrite — table itself has TRANSPARENT
+     background (was var(--bg-card)/white), so the section-empty cell at
+     top-left actually shows the page bg behind it. Without this, even
+     with section-empty having `background: transparent`, the TABLE's
+     own white bg painted through that cell area. Cells that should
+     appear white get explicit backgrounds. */
   .bigidea table.article-capture {
+    background:transparent;
     border-top:none;
     border-left:none;
     border-top-left-radius:0;
+  }
+  /* Body td cells (other than col 1 which uses bg-hover) need explicit
+     white bg now that the table itself is transparent. */
+  .bigidea table.article-capture tbody td {
+    background:var(--bg-card);
+  }
+  .bigidea table.article-capture tbody td:first-child {
+    background:var(--bg-hover);
   }
   /* "For individual articles" cell — the new visible top-left of the
      table; gets the rounded corner + the top + left borders. */

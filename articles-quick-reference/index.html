@@ -300,16 +300,25 @@
     border:none;
   }
 
-  /* Article-capture table chrome rewrite — table's outer top-left
-     border + radius dropped so col 1 of the section-row is truly
-     invisible; chrome moved onto the first non-empty section-row cell
-     ("For individual articles" label) + the icons-row first cell + body
-     first cell. Bottom-left rounded corner stays on the table via the
-     existing border-radius. */
+  /* Article-capture table chrome rewrite — table itself has TRANSPARENT
+     background (was var(--bg-card)/white), so the section-empty cell at
+     top-left actually shows the page bg behind it. Without this, even
+     with section-empty having `background: transparent`, the TABLE's
+     own white bg painted through that cell area. Cells that should
+     appear white get explicit backgrounds. */
   .bigidea table.article-capture {
+    background:transparent;
     border-top:none;
     border-left:none;
     border-top-left-radius:0;
+  }
+  /* Body td cells (other than col 1 which uses bg-hover) need explicit
+     white bg now that the table itself is transparent. */
+  .bigidea table.article-capture tbody td {
+    background:var(--bg-card);
+  }
+  .bigidea table.article-capture tbody td:first-child {
+    background:var(--bg-hover);
   }
   /* "For individual articles" cell — the new visible top-left of the
      table; gets the rounded corner + the top + left borders. */
@@ -600,17 +609,17 @@
     </tr>
     <tr>
       <td><span class="logo-pub logo-wsj">WSJ</span></td>
-      <td><em>—</em></td>
-      <td><em>—</em></td>
-      <td><em>—</em></td>
-      <td><em>—</em></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td><span class="icon-obs"></span></td>
       <td><span class="icon-email"></span></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-applenews">Apple News</span></td>
-      <td><em>—</em></td>
-      <td><em>—</em></td>
+      <td></td>
+      <td></td>
       <td>n/a</td>
       <td>n/a</td>
       <td>n/a</td>
@@ -666,8 +675,12 @@
 <td style="text-align: left;"><strong>Email-routed</strong> — newsletter / topic feed arrives in inbox and routes to the vault</td>
 </tr>
 <tr>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: left;">Doesn't work — try another cell</td>
+<td style="text-align: center;"><em class="via-note">via Jennie / via Sophie</em></td>
+<td style="text-align: left;">Email reaches the vault through a forwarding rule on another household member's account</td>
+</tr>
+<tr>
+<td style="text-align: center;">(blank)</td>
+<td style="text-align: left;"><strong>Not tackled yet</strong> — surface we haven't designed a capture flow for</td>
 </tr>
 <tr>
 <td style="text-align: center;">n/a</td>
@@ -752,7 +765,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.13 · 2026-06-01 (col-7 unified as envelope icons across all 6 paid publishers; Telegraph/Times get "via Jennie" / "via Sophie" subtitles; table chrome rewritten so the top-left rounded corner no longer extends over the publication-name column)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.14 · 2026-06-01 (table itself transparent so col-1 section-empty truly disappears; WSJ + Apple News iOS-app cells blanked — blank means not-tackled-yet)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
