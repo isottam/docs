@@ -265,6 +265,30 @@
     padding-left:36px;
     border-left:none;
   }
+
+  /* Two-section table headings sitting above the bigidea table.
+     Left heading labels the device-columns block ("For individual articles");
+     right heading labels the detached Emailed Topics column. Justified at
+     opposite ends of the table width so each visually anchors over its
+     column group. */
+  .article-table-sections {
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin:30px 0 -6px 0;
+    padding:0 8px;
+  }
+  .article-table-sections h4 {
+    margin:0;
+    font-family:'DM Sans',sans-serif;
+    font-weight:700;
+    font-size:1.02rem;
+    letter-spacing:.01em;
+    color:var(--text);
+  }
+  .article-table-sections .for-newsletters {
+    text-align:right;
+  }
   /* Email column header — small label above the envelope icon */
   .bigidea table th .email-label {
     display:block; font-size:.66rem; letter-spacing:.16em;
@@ -371,7 +395,12 @@
 
 <section class="bigidea">
   <div class="wrap">
-<p class="serif">Capturing an article you're reading right now</p><p><table>
+<p class="serif">Capturing an article you're reading right now</p><p><div class="article-table-sections">
+  <h4 class="for-individual">For individual articles</h4>
+  <h4 class="for-newsletters">For newsletters, topics &amp; writers</h4>
+</div>
+
+<table>
 <thead>
 <tr>
 <th></th>
@@ -380,7 +409,7 @@
 <th style="text-align: center;"><span class="combo-iphone-safari"></span></th>
 <th style="text-align: center;"><span class="combo-ipad-safari"></span></th>
 <th style="text-align: center;"><span class="combo-mac-browsers"></span></th>
-<th style="text-align: center;"><span class="email-label">Emailed Topics</span><span class="icon-email"></span></th>
+<th style="text-align: center;"><span class="icon-email"></span></th>
 </tr>
 </thead>
 <tbody>
@@ -567,7 +596,7 @@
 </tr>
 <tr>
 <td><strong>Apple News is closed.</strong></td>
-<td>Copy-link URLs don't open in browsers usefully. Print-to-PDF not exposed by News.app (verified 2026-06-01). AppleScript surface is a stub. Cleanest convergence remains email-this-article (Workstream 03) via the app's Share→Mail option.</td>
+<td>Genuinely closed-ecosystem. No usable per-article capture path exists: print-to-PDF not exposed by News.app, AppleScript surface is a stub, copy-paste truncates per Apple Books-style anti-piracy, and Share→Mail is also confirmed not viable (verified 2026-06-01). Workaround for high-value articles: manual copy of key passages into a vault note.</td>
 </tr>
 <tr>
 <td><strong>Email auto-capture beyond Substack.</strong></td>
@@ -594,7 +623,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.6 · 2026-06-01 (The Telegraph daemon validated 40/40 live + Akamai BM fix shipped)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.7 · 2026-06-01 (Apple News closed; "for individual articles" / "for newsletters, topics &amp; writers" section headings above table)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>

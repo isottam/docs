@@ -264,6 +264,30 @@
     padding-left:36px;
     border-left:none;
   }
+
+  /* Two-section table headings sitting above the bigidea table.
+     Left heading labels the device-columns block ("For individual articles");
+     right heading labels the detached Emailed Topics column. Justified at
+     opposite ends of the table width so each visually anchors over its
+     column group. */
+  .article-table-sections {
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin:30px 0 -6px 0;
+    padding:0 8px;
+  }
+  .article-table-sections h4 {
+    margin:0;
+    font-family:'DM Sans',sans-serif;
+    font-weight:700;
+    font-size:1.02rem;
+    letter-spacing:.01em;
+    color:var(--text);
+  }
+  .article-table-sections .for-newsletters {
+    text-align:right;
+  }
   /* Email column header — small label above the envelope icon */
   .bigidea table th .email-label {
     display:block; font-size:.66rem; letter-spacing:.16em;
