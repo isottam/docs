@@ -285,9 +285,14 @@
     padding:18px 22px 10px 22px;
   }
   /* Col 1 of section-row is intentionally empty (publication-name column
-     gets no group label — it's the title column, not a device). */
+     gets no group label — it's the title column, not a device).
+     Render as the page background colour so the white section-row chrome
+     doesn't extend over the publication-name column — the "For individual
+     articles" label visually starts at col 2, where the device columns
+     begin. */
   .bigidea table .section-row .section-empty {
     padding:0;
+    background:var(--background);
   }
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors
@@ -713,7 +718,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.10 · 2026-06-01 (Notes rows added — Times subscription blocked on Sophie's college email; Telegraph + NYT newsletters subscribable now)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.11 · 2026-06-01 (section-row col 1 transparent — white section bar no longer extends over publication-name column)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>

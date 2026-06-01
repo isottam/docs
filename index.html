@@ -284,9 +284,14 @@
     padding:18px 22px 10px 22px;
   }
   /* Col 1 of section-row is intentionally empty (publication-name column
-     gets no group label — it's the title column, not a device). */
+     gets no group label — it's the title column, not a device).
+     Render as the page background colour so the white section-row chrome
+     doesn't extend over the publication-name column — the "For individual
+     articles" label visually starts at col 2, where the device columns
+     begin. */
   .bigidea table .section-row .section-empty {
     padding:0;
+    background:var(--background);
   }
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors
