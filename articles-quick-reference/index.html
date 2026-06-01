@@ -386,26 +386,26 @@
 <td><strong>FT</strong></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><em>—</em></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
 <td style="text-align: center;">⏳</td>
 </tr>
 <tr>
 <td><strong>Telegraph</strong></td>
-<td style="text-align: center;"><span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><span class="icon-shortcut"></span></td>
-<td style="text-align: center;"><span class="icon-shortcut"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;"><span class="icon-shortcut"></span> <span class="icon-obs"></span></td>
-<td style="text-align: center;"><span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-shortcut"></span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
 <td style="text-align: center;">❓</td>
 </tr>
 <tr>
 <td><strong>The Times</strong></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><em>—</em></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
 <td style="text-align: center;">❓</td>
 </tr>
@@ -422,8 +422,8 @@
 <td><strong>NYT</strong></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><em>—</em></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
 <td style="text-align: center;">❓</td>
 </tr>
@@ -431,8 +431,8 @@
 <td><strong>Bloomberg</strong></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span></td>
-<td style="text-align: center;"><em>—</em></td>
-<td style="text-align: center;"><em>—</em></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span></td>
+<td style="text-align: center;"><span class="icon-bookmark"></span></td>
 <td style="text-align: center;"><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
 <td style="text-align: center;">⏳</td>
 </tr>
@@ -527,12 +527,16 @@
 <td>Bookmark + Substack-email file themselves automatically — zero per-article action. Web Clipper and ⌘⇧V are for "I want it now".</td>
 </tr>
 <tr>
-<td><strong>iPhone — publisher app, not Safari.</strong></td>
-<td>Safari's share-sheet on FT links bypasses your subscription. Telegraph + Substack work either way.</td>
+<td><strong>Bookmarks are server-side.</strong></td>
+<td>Tap the publisher's save / bookmark control while reading — works the same whether you're in the iOS app <strong>or</strong> Safari/Chrome on any device, as long as you're signed in. All saves land in the same per-account list the morning sweep reads (FT <code>/myft/saved-articles</code>, Telegraph <code>/saved-articles/</code>, Times <code>/my-articles</code>, NYT <code>/saved</code>, Bloomberg <code>/portal/saved</code>).</td>
+</tr>
+<tr>
+<td><strong>iPhone — Send-to-Vault Shortcut needs the publisher app.</strong></td>
+<td>The Shortcut path (<code>&lt;span class="icon-shortcut"&gt;&lt;/span&gt;</code> icon) is FT- and Telegraph-only on iPhone, and only from the publisher app's share sheet (Safari's share-sheet on FT bypasses your subscription). The bookmark path (<code>&lt;span class="icon-bookmark"&gt;&lt;/span&gt;</code> icon) works from anywhere signed-in.</td>
 </tr>
 <tr>
 <td><strong>iPad — the 90% reading surface.</strong></td>
-<td>Open Obsidian and wait for indexing before clipping (0-byte files otherwise). iPad WC doesn't reach NYT/Bloomberg/Times content.</td>
+<td>Open Obsidian and wait for indexing before clipping (0-byte files otherwise). iPad WC doesn't reach NYT/Bloomberg/Times content via Web Clipper — but the bookmark sweep does, so just tap save in the publisher's iPad app.</td>
 </tr>
 <tr>
 <td><strong>Mac — the universal fallback.</strong></td>
@@ -540,7 +544,11 @@
 </tr>
 <tr>
 <td><strong>NYT / Bloomberg / Times — bookmark in-app, sweep overnight.</strong></td>
-<td>TLS-fingerprint bot detection (HUMAN / DataDome / PerimeterX) blocks Playwright entirely. <strong>Live + validated 2026-06-01 (10 articles captured first sweep — Times 8, NYT 1, Bloomberg 1):</strong> the saved-articles-sweep daemon opens real Safari with your live subscriber session each morning at 06:30, fetches everything you bookmarked the day before, and files it. Tap the bookmark in the publisher's app on iPhone/iPad while reading — that's the only action. The daemon does the rest. (Mac Safari Web Clipper still works for "I want it now" capture.) Detail: <a href="https://github.com/isottam/claude-infrastructure/blob/main/projects/2-capture/2d-articles/decisions/005-applescript-driven-safari-sweep-as-canonical-fingerprint-bypass-for-human-class-.md">articles D5</a>.</td>
+<td>TLS-fingerprint bot detection (HUMAN / DataDome / PerimeterX) blocks Playwright entirely. <strong>Live + validated 2026-06-01 (10 articles captured first sweep — Times 8, NYT 1, Bloomberg 1):</strong> the saved-articles-sweep daemon opens real Safari with your live subscriber session each morning at 06:30, fetches everything you bookmarked the day before, and files it. (Mac Safari Web Clipper still works for "I want it now" capture.) Detail: <a href="https://github.com/isottam/claude-infrastructure/blob/main/projects/2-capture/2d-articles/decisions/005-applescript-driven-safari-sweep-as-canonical-fingerprint-bypass-for-human-class-.md">articles D5</a>.</td>
+</tr>
+<tr>
+<td><strong>Telegraph — bookmark-sweep daemon shipped 2026-06-01.</strong></td>
+<td>Same shape as FT (Playwright + cookies + warm-up), but parses the React iframe's feed API JSON (<code>/mytelegraph/feed/v0.3.0/user/&lt;uuid&gt;/articles</code>). Fires daily 06:15. <strong>Open caveat:</strong> the Telegraph per-article adapter has a pre-existing extraction issue on premium articles surfaced during first-run testing — the daemon discovers your bookmarks correctly (40 found first sweep) but per-article capture may fail; failure-retry cap of 3 protects from spinning. Adapter fix is a separate workstream.</td>
 </tr>
 <tr>
 <td><strong>WSJ is still Mac-WC-only.</strong></td>
@@ -548,7 +556,7 @@
 </tr>
 <tr>
 <td><strong>Apple News is closed.</strong></td>
-<td>Copy-link URLs don't open in browsers usefully. Planned email-this-article is the only future option.</td>
+<td>Copy-link URLs don't open in browsers usefully. Print-to-PDF not exposed by News.app (verified 2026-06-01). AppleScript surface is a stub. Cleanest convergence remains email-this-article (Workstream 03) via the app's Share→Mail option.</td>
 </tr>
 <tr>
 <td><strong>Email auto-capture beyond Substack.</strong></td>
@@ -556,7 +564,7 @@
 </tr>
 <tr>
 <td><strong>Bookmark-sweep coverage.</strong></td>
-<td>FT (live 2026-05-23 via Playwright). NYT + Bloomberg + Times (live + validated 2026-06-01 via AppleScript-driven Safari, 10 articles first sweep — see articles D5). Telegraph next (same Akamai class as FT). WSJ deferred until subscription renews.</td>
+<td>FT (live 2026-05-23 via Playwright). Telegraph (daemon live 2026-06-01 via Playwright + JSON feed API). NYT + Bloomberg + Times (live + validated 2026-06-01 via AppleScript-driven Safari, 10 articles first sweep — see articles D5). WSJ deferred until subscription renews.</td>
 </tr>
 <tr>
 <td><strong>Future channels on the roadmap.</strong></td>
@@ -568,14 +576,14 @@
 
 <section class="oneline">
   <div class="wrap">
-    <p class="serif"><strong>The two best paths are the ones that need zero thought</strong> — bookmark in the publisher app (FT / Times / NYT / Bloomberg) for the morning sweep, subscribe via <code>substacks@isotta.net</code> for Substack newsletters. All five file themselves automatically. Everything else in the table is for ad-hoc captures.</p>
+    <p class="serif"><strong>The two best paths are the ones that need zero thought</strong> — bookmark in the publisher app (FT / Telegraph / Times / NYT / Bloomberg) for the morning sweep, subscribe via <code>substacks@isotta.net</code> for Substack newsletters. All six file themselves automatically. Everything else in the table is for ad-hoc captures.</p>
   </div>
 </section>
 
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.1 · 2026-06-01 (NYT/Bloomberg/Times sweep validated live)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.2 · 2026-06-01 (Telegraph daemon + iOS-Safari bookmark fix)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
