@@ -268,7 +268,8 @@
   }
 
   /* Section-row — top row of the table head. Labels the column groups:
-       "For individual articles"  (colspan=6 over cols 1-6)
+       (col 1, empty — publisher-name column, no label)
+       "For individual articles"  (colspan=5 over cols 2-6 — device columns)
        "For newsletters, topics, and writers"  (col 7, detached)
      Looks like floating headings above each column group; no inset bg,
      no bottom-border (the icons-row below carries the divider). */
@@ -283,11 +284,27 @@
     color:var(--text);
     padding:18px 22px 10px 22px;
   }
+  /* Col 1 of section-row is intentionally empty (publication-name column
+     gets no group label — it's the title column, not a device). */
+  .bigidea table .section-row .section-empty {
+    padding:0;
+  }
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors
        over the detached column. */
     box-shadow:inset 40px 0 0 var(--background);
     padding-left:54px;
+  }
+  /* "available — not subscribed" — muted italic text for col-7 cells
+     where the publisher offers a newsletter feed but the user isn't
+     subscribed. */
+  .not-subscribed {
+    color:var(--text-tertiary);
+    font-size:.86rem;
+    font-style:italic;
+    font-family:'DM Sans',sans-serif;
+    font-weight:400;
+    letter-spacing:.005em;
   }
   /* Icons-row (second header row) keeps the border-bottom that the
      standard `th` rule provides, since section-row above no longer
@@ -470,7 +487,8 @@
 <p><table class="article-capture">
   <thead>
     <tr class="section-row">
-      <th colspan="6" class="for-individual">For individual articles</th>
+      <th class="section-empty"></th>
+      <th colspan="5" class="for-individual">For individual articles</th>
       <th class="for-newsletters">For newsletters, topics, and writers</th>
     </tr>
     <tr class="icons-row">
@@ -480,7 +498,7 @@
       <th><span class="combo-iphone-safari"></span></th>
       <th><span class="combo-ipad-safari"></span></th>
       <th><span class="combo-mac-browsers"></span></th>
-      <th><span class="icon-email"></span></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -491,7 +509,7 @@
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-      <td>❓</td>
+      <td><em class="not-subscribed">available — not subscribed</em></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-ft">FT</span></td>
@@ -509,7 +527,7 @@
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-      <td>❓</td>
+      <td><em class="not-subscribed">available — not subscribed</em></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-nyt">NYT</span></td>
@@ -518,7 +536,7 @@
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-      <td>❓</td>
+      <td><em class="not-subscribed">available — not subscribed</em></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-bloomberg">Bloomberg</span></td>
@@ -597,20 +615,12 @@
 <td style="text-align: left;"><strong>Email-routed</strong> — Inbox rule + (optionally) daemon to vault</td>
 </tr>
 <tr>
-<td style="text-align: center;">✅</td>
-<td style="text-align: left;">Set up — works today</td>
-</tr>
-<tr>
 <td style="text-align: center;">⏳</td>
-<td style="text-align: left;">Inbox rule filed; daemon to follow</td>
+<td style="text-align: left;">Inbox rule filed; daemon parser to follow</td>
 </tr>
 <tr>
-<td style="text-align: center;">❓</td>
-<td style="text-align: left;">Not investigated</td>
-</tr>
-<tr>
-<td style="text-align: center;">❌</td>
-<td style="text-align: left;">No path possible</td>
+<td style="text-align: center;"><em class="not-subscribed">available — not subscribed</em></td>
+<td style="text-align: left;">Newsletter / topic feed exists at this publisher; you haven't subscribed</td>
 </tr>
 <tr>
 <td style="text-align: center;"><em>—</em></td>
@@ -618,7 +628,7 @@
 </tr>
 <tr>
 <td style="text-align: center;">n/a</td>
-<td style="text-align: left;">Combo doesn't exist</td>
+<td style="text-align: left;">Combo doesn't exist (or no email path at all)</td>
 </tr>
 </tbody>
 </table></p>  </div>
@@ -695,7 +705,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.8 · 2026-06-01 (section labels embedded in table head with colspan; column 7 detached with bigger gray gap; publication names rendered as branded pills)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.9 · 2026-06-01 ("For individual articles" now spans cols 2-6 only; envelope icon removed from col-7 header; Telegraph/Times/NYT col-7 status empirically updated to "available — not subscribed")</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>

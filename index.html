@@ -267,7 +267,8 @@
   }
 
   /* Section-row — top row of the table head. Labels the column groups:
-       "For individual articles"  (colspan=6 over cols 1-6)
+       (col 1, empty — publisher-name column, no label)
+       "For individual articles"  (colspan=5 over cols 2-6 — device columns)
        "For newsletters, topics, and writers"  (col 7, detached)
      Looks like floating headings above each column group; no inset bg,
      no bottom-border (the icons-row below carries the divider). */
@@ -282,11 +283,27 @@
     color:var(--text);
     padding:18px 22px 10px 22px;
   }
+  /* Col 1 of section-row is intentionally empty (publication-name column
+     gets no group label — it's the title column, not a device). */
+  .bigidea table .section-row .section-empty {
+    padding:0;
+  }
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors
        over the detached column. */
     box-shadow:inset 40px 0 0 var(--background);
     padding-left:54px;
+  }
+  /* "available — not subscribed" — muted italic text for col-7 cells
+     where the publisher offers a newsletter feed but the user isn't
+     subscribed. */
+  .not-subscribed {
+    color:var(--text-tertiary);
+    font-size:.86rem;
+    font-style:italic;
+    font-family:'DM Sans',sans-serif;
+    font-weight:400;
+    letter-spacing:.005em;
   }
   /* Icons-row (second header row) keeps the border-bottom that the
      standard `th` rule provides, since section-row above no longer
