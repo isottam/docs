@@ -284,14 +284,60 @@
     padding:18px 22px 10px 22px;
   }
   /* Col 1 of section-row is intentionally empty (publication-name column
-     gets no group label — it's the title column, not a device).
-     Render as the page background colour so the white section-row chrome
-     doesn't extend over the publication-name column — the "For individual
-     articles" label visually starts at col 2, where the device columns
-     begin. */
+     gets no group label — it's the title column, not a device). Renders
+     as the page background colour, no borders, so it disappears into the
+     surrounding cream page. The visible top-left corner of the table now
+     sits at the start of the "For individual articles" label (col 2),
+     not at col 1.
+
+     For this to work we ALSO move the table's outer border-top + border-
+     left + top-left rounded-corner off the table itself onto specific
+     cells (see `.article-capture` rules below). */
   .bigidea table .section-row .section-empty {
     padding:0;
     background:var(--background);
+    border:none;
+  }
+
+  /* Article-capture table chrome rewrite — table's outer top-left
+     border + radius dropped so col 1 of the section-row is truly
+     invisible; chrome moved onto the first non-empty section-row cell
+     ("For individual articles" label) + the icons-row first cell + body
+     first cell. Bottom-left rounded corner stays on the table via the
+     existing border-radius. */
+  .bigidea table.article-capture {
+    border-top:none;
+    border-left:none;
+    border-top-left-radius:0;
+  }
+  /* "For individual articles" cell — the new visible top-left of the
+     table; gets the rounded corner + the top + left borders. */
+  .bigidea table.article-capture .section-row th.for-individual {
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
+    border-top-left-radius:14px;
+  }
+  /* Col 1 of icons-row + body — needs its own top + left border so the
+     publication-name column reads as the start of the white body area. */
+  .bigidea table.article-capture .icons-row th:first-child {
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
+  }
+  .bigidea table.article-capture tbody td:first-child {
+    border-left:1px solid var(--border);
+  }
+
+  /* "via Jennie" / "via Sophie" — small italic subtitle under the
+     envelope icon for Telegraph + Times rows in col 7. Indicates the
+     newsletter content reaches the vault via a forwarding rule on
+     someone else's mailbox. */
+  .via-note {
+    display:block;
+    font-size:.72rem;
+    font-style:italic;
+    color:var(--text-tertiary);
+    margin-top:4px;
+    letter-spacing:.01em;
   }
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors

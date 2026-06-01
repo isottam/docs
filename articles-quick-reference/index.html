@@ -285,14 +285,60 @@
     padding:18px 22px 10px 22px;
   }
   /* Col 1 of section-row is intentionally empty (publication-name column
-     gets no group label — it's the title column, not a device).
-     Render as the page background colour so the white section-row chrome
-     doesn't extend over the publication-name column — the "For individual
-     articles" label visually starts at col 2, where the device columns
-     begin. */
+     gets no group label — it's the title column, not a device). Renders
+     as the page background colour, no borders, so it disappears into the
+     surrounding cream page. The visible top-left corner of the table now
+     sits at the start of the "For individual articles" label (col 2),
+     not at col 1.
+
+     For this to work we ALSO move the table's outer border-top + border-
+     left + top-left rounded-corner off the table itself onto specific
+     cells (see `.article-capture` rules below). */
   .bigidea table .section-row .section-empty {
     padding:0;
     background:var(--background);
+    border:none;
+  }
+
+  /* Article-capture table chrome rewrite — table's outer top-left
+     border + radius dropped so col 1 of the section-row is truly
+     invisible; chrome moved onto the first non-empty section-row cell
+     ("For individual articles" label) + the icons-row first cell + body
+     first cell. Bottom-left rounded corner stays on the table via the
+     existing border-radius. */
+  .bigidea table.article-capture {
+    border-top:none;
+    border-left:none;
+    border-top-left-radius:0;
+  }
+  /* "For individual articles" cell — the new visible top-left of the
+     table; gets the rounded corner + the top + left borders. */
+  .bigidea table.article-capture .section-row th.for-individual {
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
+    border-top-left-radius:14px;
+  }
+  /* Col 1 of icons-row + body — needs its own top + left border so the
+     publication-name column reads as the start of the white body area. */
+  .bigidea table.article-capture .icons-row th:first-child {
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
+  }
+  .bigidea table.article-capture tbody td:first-child {
+    border-left:1px solid var(--border);
+  }
+
+  /* "via Jennie" / "via Sophie" — small italic subtitle under the
+     envelope icon for Telegraph + Times rows in col 7. Indicates the
+     newsletter content reaches the vault via a forwarding rule on
+     someone else's mailbox. */
+  .via-note {
+    display:block;
+    font-size:.72rem;
+    font-style:italic;
+    color:var(--text-tertiary);
+    margin-top:4px;
+    letter-spacing:.01em;
   }
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors
@@ -514,7 +560,7 @@
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-      <td><em class="not-subscribed">via Jennie — forward to mvault</em></td>
+      <td><span class="icon-email"></span><span class="via-note">via Jennie</span></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-ft">FT</span></td>
@@ -523,7 +569,7 @@
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-      <td>⏳</td>
+      <td><span class="icon-email"></span></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-times">The Times</span></td>
@@ -532,7 +578,7 @@
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-      <td><em class="not-subscribed">available — not subscribed</em></td>
+      <td><span class="icon-email"></span><span class="via-note">via Sophie</span></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-nyt">NYT</span></td>
@@ -541,7 +587,7 @@
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-      <td><em class="not-subscribed">available — not subscribed</em></td>
+      <td><span class="icon-email"></span></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-bloomberg">Bloomberg</span></td>
@@ -550,7 +596,7 @@
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span></td>
       <td><span class="icon-bookmark"></span> <span class="icon-obs"></span></td>
-      <td>⏳</td>
+      <td><span class="icon-email"></span></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-wsj">WSJ</span></td>
@@ -559,7 +605,7 @@
       <td><em>—</em></td>
       <td><em>—</em></td>
       <td><span class="icon-obs"></span></td>
-      <td>⏳</td>
+      <td><span class="icon-email"></span></td>
     </tr>
     <tr>
       <td><span class="logo-pub logo-applenews">Apple News</span></td>
@@ -617,15 +663,7 @@
 </tr>
 <tr>
 <td style="text-align: center;"><span class="icon-email"></span></td>
-<td style="text-align: left;"><strong>Email-routed</strong> — Inbox rule + (optionally) daemon to vault</td>
-</tr>
-<tr>
-<td style="text-align: center;">⏳</td>
-<td style="text-align: left;">Inbox rule filed; daemon parser to follow</td>
-</tr>
-<tr>
-<td style="text-align: center;"><em class="not-subscribed">available — not subscribed</em></td>
-<td style="text-align: left;">Newsletter / topic feed exists at this publisher; you haven't subscribed</td>
+<td style="text-align: left;"><strong>Email-routed</strong> — newsletter / topic feed arrives in inbox and routes to the vault</td>
 </tr>
 <tr>
 <td style="text-align: center;"><em>—</em></td>
@@ -694,16 +732,8 @@
 <td>The Telegraph (live + validated 2026-06-01 via Playwright + JSON feed API, 40 articles first sweep). FT (live 2026-05-23 via Playwright). NYT + Bloomberg + Times (live + validated 2026-06-01 via AppleScript-driven Safari, 10 articles first sweep — see articles D5). WSJ deferred until subscription renews.</td>
 </tr>
 <tr>
-<td><strong>The Telegraph newsletters — Jennie's account; forward to mvault.</strong></td>
-<td>Telegraph subscription is in Jennie's name + uses her email, so any newsletters she's already subscribed to are landing in her inbox now. Quickest activation: set up a forwarding rule in Jennie's Outlook for any Telegraph sender domain (e.g. <code>*@telegraph.co.uk</code>) → <code>mvault@isotta.net</code>. The mvault rule already routes that to <code>Inbox/Articles</code>, and the daemon picks it up on the next 15-min tick. No new daemon work needed — URL-only fallback handles it (Phase 2 multi-card parser later for richer extraction).</td>
-</tr>
-<tr>
-<td><strong>The Times newsletters — blocked on Sophie's college email.</strong></td>
-<td>The household Times subscription sits under Sophie's college email; ~6–7 newsletters are worth subscribing to (Red Box, Saturday Sip, Times Magazine, plus topic feeds) but registering them requires either reassigning the subscription to a new email or setting a Times-side forward rule on her account. Pick this up when Sophie is back (~3–4 weeks).</td>
-</tr>
-<tr>
-<td><strong>NYT newsletters — subscribable directly.</strong></td>
-<td>NYT account isn't tied to a family member's email; you can subscribe to NYT newsletters under your own email anytime. ~Dozens of options — The Morning, Opinion Today, topic feeds for any tag. Subscribe → Outlook rule routing the sender domain → daemon picks up via URL-only fallback.</td>
+<td><strong>"via Jennie" / "via Sophie" — household account routing.</strong></td>
+<td>The Telegraph subscription is in Jennie's name; The Times in Sophie's college email. Newsletter content from those accounts reaches the vault via a forwarding rule on each account's mailbox routing publisher mail to <code>mvault@isotta.net</code>. From your side: just bookmark / read normally — content arrives in the K&amp;I vault on the daemon's 15-min cadence.</td>
 </tr>
 <tr>
 <td><strong>Future channels on the roadmap.</strong></td>
@@ -722,7 +752,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.12 · 2026-06-01 (Telegraph row reflects Jennie-account + forwarding-rule path; Notes rows for Telegraph + Times + NYT each get the right "how to activate" guidance)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.13 · 2026-06-01 (col-7 unified as envelope icons across all 6 paid publishers; Telegraph/Times get "via Jennie" / "via Sophie" subtitles; table chrome rewritten so the top-left rounded corner no longer extends over the publication-name column)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
