@@ -558,8 +558,8 @@
 <td>TLS-fingerprint bot detection (HUMAN / DataDome / PerimeterX) blocks Playwright entirely. <strong>Live + validated 2026-06-01 (10 articles captured first sweep — Times 8, NYT 1, Bloomberg 1):</strong> the saved-articles-sweep daemon opens real Safari with your live subscriber session each morning at 06:30, fetches everything you bookmarked the day before, and files it. (Mac Safari Web Clipper still works for "I want it now" capture.) Detail: <a href="https://github.com/isottam/claude-infrastructure/blob/main/projects/2-capture/2d-articles/decisions/005-applescript-driven-safari-sweep-as-canonical-fingerprint-bypass-for-human-class-.md">articles D5</a>.</td>
 </tr>
 <tr>
-<td><strong>The Telegraph — bookmark-sweep daemon shipped 2026-06-01.</strong></td>
-<td>Same shape as FT (Playwright + cookies + warm-up), but parses the React iframe's feed API JSON (<code>/mytelegraph/feed/v0.3.0/user/&lt;uuid&gt;/articles</code>). Fires daily 06:15. <strong>Open caveat:</strong> the per-article adapter has a pre-existing extraction issue on premium articles surfaced during first-run testing — the daemon discovers your bookmarks correctly (40 found first sweep) but per-article capture may fail; failure-retry cap of 3 protects from spinning. Adapter fix is a separate workstream.</td>
+<td><strong>The Telegraph — bookmark-sweep daemon live + validated 2026-06-01.</strong></td>
+<td>Same shape as FT (Playwright + cookies + warm-up), but parses the React iframe's feed API JSON (<code>/mytelegraph/feed/v0.3.0/user/&lt;uuid&gt;/articles</code>). Fires daily 06:15. <strong>40 articles captured first manual sweep — 0 failures, 0 errors.</strong> Earlier-same-day Akamai BM regression (publisher had ratcheted bot detection between 2026-05-13 and 2026-06-01) fixed via 6-attr anti-fingerprinting on the adapter base class; post-mortem in [<code>projects/2-capture/2d-articles/akamai-bm-ratcheting-post-mortem-2026-06-01.md</code>].</td>
 </tr>
 <tr>
 <td><strong>WSJ is still Mac-WC-only.</strong></td>
@@ -575,7 +575,7 @@
 </tr>
 <tr>
 <td><strong>Bookmark-sweep coverage.</strong></td>
-<td>The Telegraph (daemon live 2026-06-01 via Playwright + JSON feed API). FT (live 2026-05-23 via Playwright). NYT + Bloomberg + Times (live + validated 2026-06-01 via AppleScript-driven Safari, 10 articles first sweep — see articles D5). WSJ deferred until subscription renews.</td>
+<td>The Telegraph (live + validated 2026-06-01 via Playwright + JSON feed API, 40 articles first sweep). FT (live 2026-05-23 via Playwright). NYT + Bloomberg + Times (live + validated 2026-06-01 via AppleScript-driven Safari, 10 articles first sweep — see articles D5). WSJ deferred until subscription renews.</td>
 </tr>
 <tr>
 <td><strong>Future channels on the roadmap.</strong></td>
@@ -594,7 +594,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.5 · 2026-06-01 (The Telegraph first + Emailed Topics column detached)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.6 · 2026-06-01 (The Telegraph daemon validated 40/40 live + Akamai BM fix shipped)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
