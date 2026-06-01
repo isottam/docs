@@ -246,12 +246,23 @@
     margin:0 4px;
   }
 
-  /* Vertical separators — one between Publisher-app block (cols 2-3) and Browser
-     block (cols 4-6), and one between Browser block and the Email column (col 7).
-     Only on data cells (td), not headers (th) — restricts to the white area. */
-  .bigidea table td:nth-child(4),
-  .bigidea table td:nth-child(7) {
+  /* Vertical separator between Publisher-app block (cols 2-3) and Browser
+     block (cols 4-6). Only on data cells (td), not headers (th) — restricts
+     to the white area. */
+  .bigidea table td:nth-child(4) {
     border-left:1px solid var(--border);
+  }
+
+  /* Column 7 (Emailed Topics) — visually detached from the rest of the
+     table. Faux "gap" in the page background colour is rendered via an
+     inset box-shadow on the cell's left edge, with extra padding-left so
+     the cell content clears the shadow. Gives the impression of a separate
+     floating column off to the right. */
+  .bigidea table th:nth-child(7),
+  .bigidea table td:nth-child(7) {
+    box-shadow:inset 22px 0 0 var(--background);
+    padding-left:36px;
+    border-left:none;
   }
   /* Email column header — small label above the envelope icon */
   .bigidea table th .email-label {

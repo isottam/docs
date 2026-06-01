@@ -247,12 +247,23 @@
     margin:0 4px;
   }
 
-  /* Vertical separators — one between Publisher-app block (cols 2-3) and Browser
-     block (cols 4-6), and one between Browser block and the Email column (col 7).
-     Only on data cells (td), not headers (th) — restricts to the white area. */
-  .bigidea table td:nth-child(4),
-  .bigidea table td:nth-child(7) {
+  /* Vertical separator between Publisher-app block (cols 2-3) and Browser
+     block (cols 4-6). Only on data cells (td), not headers (th) — restricts
+     to the white area. */
+  .bigidea table td:nth-child(4) {
     border-left:1px solid var(--border);
+  }
+
+  /* Column 7 (Emailed Topics) — visually detached from the rest of the
+     table. Faux "gap" in the page background colour is rendered via an
+     inset box-shadow on the cell's left edge, with extra padding-left so
+     the cell content clears the shadow. Gives the impression of a separate
+     floating column off to the right. */
+  .bigidea table th:nth-child(7),
+  .bigidea table td:nth-child(7) {
+    box-shadow:inset 22px 0 0 var(--background);
+    padding-left:36px;
+    border-left:none;
   }
   /* Email column header — small label above the envelope icon */
   .bigidea table th .email-label {
@@ -369,7 +380,7 @@
 <th style="text-align: center;"><span class="combo-iphone-safari"></span></th>
 <th style="text-align: center;"><span class="combo-ipad-safari"></span></th>
 <th style="text-align: center;"><span class="combo-mac-browsers"></span></th>
-<th style="text-align: center;"><span class="email-label">Auto via email</span><span class="icon-email"></span></th>
+<th style="text-align: center;"><span class="email-label">Emailed Topics</span><span class="icon-email"></span></th>
 </tr>
 </thead>
 <tbody>
@@ -434,7 +445,7 @@
 <td style="text-align: center;">n/a</td>
 <td style="text-align: center;">n/a</td>
 <td style="text-align: center;">n/a</td>
-<td style="text-align: center;">❌</td>
+<td style="text-align: center;">n/a</td>
 </tr>
 <tr>
 <td><strong>Substack</strong></td>
@@ -443,7 +454,7 @@
 <td style="text-align: center;"><span class="icon-shortcut"></span> <span class="icon-obs"></span></td>
 <td style="text-align: center;"><span class="icon-shortcut"></span> <span class="icon-obs"></span></td>
 <td style="text-align: center;"><span class="icon-obs"></span> <span class="icon-cmd">⌘⇧V</span></td>
-<td style="text-align: center;">✅</td>
+<td style="text-align: center;"><span class="icon-email"></span></td>
 </tr>
 <tr>
 <td><strong>Generic web page</strong></td>
@@ -583,7 +594,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.3 · 2026-06-01 (row order — paid newspapers up top, Substack + generic web at bottom)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.4 · 2026-06-01 (Emailed Topics column detached; Apple News n/a; Substack envelope icon)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
