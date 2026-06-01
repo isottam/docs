@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Articles — Quick Reference</title>
 <meta property="og:title" content="Articles — Quick Reference"><meta property="og:type" content="article">
+
+<!-- iOS Home Screen + Safari chrome: matches the page's cream
+     background (--bg #faf8f5) so the status bar / toolbar blend with
+     the page; lets the page run as a standalone web app once added
+     to Home Screen. -->
+<meta name="theme-color" content="#faf8f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Articles — Quick Reference"><meta name="format-detection" content="telephone=no">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,7 +30,14 @@
     --blue:#3d6b99; --blue-dim:rgba(61,107,153,.08);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{font-size:16px; scroll-behavior:smooth;}
+  html{
+    font-size:16px;
+    scroll-behavior:smooth;
+    /* Match body bg so iOS Safari's rubber-band overscroll area shows
+       cream not white; also covers the area above status bar when
+       added to iPhone Home Screen as a standalone web app. */
+    background:var(--bg);
+  }
   body{
     font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
     background:var(--bg); color:var(--text);
@@ -262,7 +279,7 @@
      icons-row header, body cells. */
   .bigidea table th:nth-child(7),
   .bigidea table td:nth-child(7) {
-    box-shadow:inset 40px 0 0 var(--background);
+    box-shadow:inset 40px 0 0 var(--bg);
     padding-left:54px;
     border-left:none;
   }
@@ -296,7 +313,7 @@
      cells (see `.article-capture` rules below). */
   .bigidea table .section-row .section-empty {
     padding:0;
-    background:var(--background);
+    background:var(--bg);
     border:none;
   }
 
@@ -352,7 +369,7 @@
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors
        over the detached column. */
-    box-shadow:inset 40px 0 0 var(--background);
+    box-shadow:inset 40px 0 0 var(--bg);
     padding-left:54px;
   }
   /* "available — not subscribed" — muted italic text for col-7 cells
@@ -749,6 +766,10 @@
 <td>The Telegraph subscription is in Jennie's name; The Times in Sophie's college email. Newsletter content from those accounts reaches the vault via a forwarding rule on each account's mailbox routing publisher mail to <code>mvault@isotta.net</code>. From your side: just bookmark / read normally — content arrives in the K&amp;I vault on the daemon's 15-min cadence.</td>
 </tr>
 <tr>
+<td><strong>Keep this guide handy.</strong></td>
+<td><strong>iOS</strong> — open this page in Safari → tap Share → scroll to <strong>Add to Home Screen</strong>. Opens as a standalone web app, no Safari chrome. <strong>Mac</strong> — Cmd+D to bookmark, or drag the URL onto the Favorites bar / Bookmarks bar for one-click access in any browser. URL is <code>https://isottam.github.io/docs/articles-quick-reference/</code> (will migrate to <code>docs.isotta.net</code> once Cloudflare Pages cuts over).</td>
+</tr>
+<tr>
 <td><strong>Future channels on the roadmap.</strong></td>
 <td>RSS feeds; per-user Substack aliases (Jennie/Isabella get their own streams); email-this-article (publisher-native "Share by email" → vault alias); 3rd-party buffer (Readwise Reader, paid).</td>
 </tr>
@@ -765,7 +786,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.16 · 2026-06-01 (oneline at bottom reframed — Bookmark + Subscribe as the two zero-thought paths, no longer Substack-specific)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.17 · 2026-06-01 (iPhone bg fix — html element gets cream bg; iOS PWA meta tags so Add-to-Home-Screen runs standalone; "Keep this handy" Notes row with install instructions)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
