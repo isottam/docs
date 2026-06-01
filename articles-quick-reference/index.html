@@ -272,7 +272,7 @@
      icons-row header, body cells. */
   .bigidea table th:nth-child(7),
   .bigidea table td:nth-child(7) {
-    box-shadow:inset 40px 0 0 var(--background);
+    box-shadow:inset 40px 0 0 var(--bg-inset);
     padding-left:54px;
     border-left:none;
   }
@@ -306,7 +306,7 @@
      cells (see `.article-capture` rules below). */
   .bigidea table .section-row .section-empty {
     padding:0;
-    background:var(--background);
+    background:var(--bg-inset);
     border:none;
   }
 
@@ -362,7 +362,7 @@
   .bigidea table .section-row .for-newsletters {
     /* Matches col-7 detachment (above) so the label visually anchors
        over the detached column. */
-    box-shadow:inset 40px 0 0 var(--background);
+    box-shadow:inset 40px 0 0 var(--bg-inset);
     padding-left:54px;
   }
   /* "available — not subscribed" — muted italic text for col-7 cells
@@ -779,7 +779,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.22 · 2026-06-01 (restored exact v7.14 system.css — last known iPad-good baseline; iPhone parked as separate workstream)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.23 · 2026-06-01 (iPad chrome fix — undefined var(--background) → var(--bg-inset) at 3 sites so section-empty + col-7 detachment gap + for-newsletters inset match the bigidea darker-cream surround; iPhone still parked)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>
