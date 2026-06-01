@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family Articles Capture — Quick Reference</title>
+<meta property="og:title" content="Family Articles Capture — Quick Reference"><meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#faf8f5; --bg-card:#ffffff; --bg-hover:#f5f2ee; --bg-inset:#f0ece6;
+    --border:#e8e2d9; --border-strong:#d4cdc2;
+    --text:#2c2520; --text-secondary:#6f655c; --text-tertiary:#a69e94;
+    --wine:#8b2252; --wine-dim:rgba(139,34,82,.08); --wine-light:#a63a6a;
+    --green:#2d7a4f; --green-dim:rgba(45,122,79,.08);
+    --amber:#b8860b; --amber-dim:rgba(184,134,11,.08);
+    --blue:#3d6b99; --blue-dim:rgba(61,107,153,.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{font-size:16px; scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg); color:var(--text);
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  .serif{font-family:'DM Serif Display',Georgia,serif;}
+  .mono{font-family:'DM Mono',monospace;}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:84px 0 56px; text-align:center; border-bottom:1px solid var(--border);}
+  .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:22px;}
+  h1.serif{font-size:3.1rem; line-height:1.08; letter-spacing:-.01em; max-width:780px; margin:0 auto 22px;}
+  .hero-sub{font-size:1.12rem; color:var(--text-secondary); max-width:600px; margin:0 auto;}
+  .hero-sub em{font-family:'DM Serif Display',serif; font-style:italic; color:var(--text);}
+  .for-isabella{display:inline-block; margin-top:30px; font-size:.85rem; color:var(--text-tertiary); border:1px solid var(--border-strong); border-radius:999px; padding:7px 18px;}
+
+  /* ---------- THE BIG IDEA ---------- */
+  .bigidea{padding:56px 0; text-align:center; background:var(--bg-inset); border-bottom:1px solid var(--border);}
+  .bigidea .serif{font-size:1.9rem; line-height:1.28; max-width:760px; margin:0 auto 16px;}
+  .bigidea .serif b{color:var(--wine); font-weight:400;}
+  .bigidea p{color:var(--text-secondary); max-width:600px; margin:0 auto; font-size:1.02rem;}
+
+  /* ---------- FLOW STRIP ---------- */
+  section.flow{padding:64px 0 36px;}
+  .section-head{text-align:center; margin-bottom:48px;}
+  .section-head .eyebrow{font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-tertiary); font-weight:600;}
+  .section-head h2{font-family:'DM Serif Display',serif; font-size:2.1rem; margin-top:10px; letter-spacing:-.01em;}
+  .strip{display:grid; grid-template-columns:repeat(5,1fr); gap:0; align-items:stretch; margin-bottom:8px;}
+  .stage{position:relative; padding:0 14px; text-align:center;}
+  .stage .num{width:30px; height:30px; border-radius:50%; border:1.5px solid var(--border-strong); color:var(--text-tertiary); font-size:.8rem; font-weight:600; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;}
+  .stage.turning .num{background:var(--wine); border-color:var(--wine); color:#fff;}
+  .stage .ico{font-size:1.7rem; margin-bottom:12px; line-height:1;}
+  .stage .name{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--text); margin-bottom:8px;}
+  .stage.turning .name{color:var(--wine);}
+  .stage .cap{font-size:.86rem; color:var(--text-secondary); font-style:italic; font-family:'DM Serif Display',serif;}
+  .stage .arrow{position:absolute; top:8px; right:-9px; color:var(--border-strong); font-size:1.1rem;}
+  .stage:last-child .arrow{display:none;}
+  .flow-foot{text-align:center; font-family:'DM Serif Display',serif; font-style:italic; color:var(--text-secondary); font-size:1.05rem; margin-top:30px;}
+
+  /* ---------- DEEP STAGE CARDS ---------- */
+  section.deep{padding:40px 0 24px;}
+  .stagecard{background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:38px 40px; margin-bottom:26px; position:relative; overflow:hidden;}
+  .stagecard.turning{border-color:var(--wine); border-width:1.5px; box-shadow:0 1px 0 var(--wine-dim);}
+  .stagecard .tag{position:absolute; top:0; left:0; background:var(--bg-inset); color:var(--text-tertiary); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; padding:6px 16px; border-bottom-right-radius:12px;}
+  .stagecard.turning .tag{background:var(--wine); color:#fff;}
+  .sc-head{display:flex; align-items:baseline; gap:14px; margin:18px 0 6px;}
+  .sc-head .stepno{font-family:'DM Serif Display',serif; font-size:2.4rem; color:var(--border-strong); line-height:1;}
+  .stagecard.turning .sc-head .stepno{color:var(--wine-light);}
+  .sc-head h3{font-family:'DM Serif Display',serif; font-size:1.65rem; letter-spacing:-.01em;}
+  .sc-lede{font-size:1.05rem; color:var(--text-secondary); margin-bottom:24px; max-width:680px;}
+  .sc-lede b{color:var(--text); font-weight:600;}
+  .sc-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media(max-width:720px){.sc-grid{grid-template-columns:1fr;}}
+  .mech{background:var(--bg-hover); border-radius:11px; padding:18px 20px; border:1px solid var(--border);}
+  .mech h4{font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--wine); font-weight:700; margin-bottom:9px; display:flex; align-items:center; gap:8px;}
+  .mech p{font-size:.94rem; color:var(--text-secondary);}
+  .mech p b{color:var(--text); font-weight:600;}
+  .mech code{font-family:'DM Mono',monospace; font-size:.82em; background:var(--bg-inset); padding:1px 6px; border-radius:5px; color:var(--text);}
+  .plain{margin-top:18px; background:var(--green-dim); border-left:3px solid var(--green); border-radius:0 8px 8px 0; padding:13px 18px; font-size:.92rem;}
+  .plain b{color:var(--green); font-weight:700; letter-spacing:.04em; font-size:.74rem; text-transform:uppercase; display:block; margin-bottom:4px;}
+
+  /* ---------- WHY FLAT / THE TWO PILLARS ---------- */
+  section.pillars{padding:56px 0; background:var(--bg-inset); border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-top:30px;}
+  .pillar-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:40px;}
+  @media(max-width:720px){.pillar-grid{grid-template-columns:1fr;}}
+  .pillar{background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:30px 32px;}
+  .pillar .pico{font-size:1.6rem; margin-bottom:14px;}
+  .pillar h3{font-family:'DM Serif Display',serif; font-size:1.4rem; margin-bottom:12px;}
+  .pillar p{color:var(--text-secondary); font-size:.96rem; margin-bottom:14px;}
+  .pillar ul{list-style:none; font-size:.92rem;}
+  .pillar li{padding:7px 0 7px 22px; position:relative; color:var(--text-secondary); border-top:1px solid var(--border);}
+  .pillar li:before{content:""; position:absolute; left:2px; top:14px; width:7px; height:7px; border-radius:50%; background:var(--wine);}
+  .pillar li b{color:var(--text);}
+  .pillar li code{font-family:'DM Mono',monospace; font-size:.82em; background:var(--bg-inset); padding:1px 6px; border-radius:5px;}
+
+  /* ---------- THE SCORING MACHINE ---------- */
+  section.scoring{padding:64px 0;}
+  .score-box{background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:38px 40px; margin-top:36px;}
+  .score-row{display:flex; align-items:center; gap:18px; padding:16px 0; border-top:1px solid var(--border);}
+  .score-row:first-of-type{border-top:none;}
+  .score-pts{font-family:'DM Serif Display',serif; font-size:2.1rem; color:var(--wine); min-width:64px; text-align:center;}
+  .score-row .lbl b{display:block; font-size:1rem; color:var(--text); margin-bottom:2px;}
+  .score-row .lbl span{font-size:.9rem; color:var(--text-secondary);}
+  .score-note{margin-top:24px; font-style:italic; font-family:'DM Serif Display',serif; color:var(--text-secondary); text-align:center; font-size:1.02rem;}
+
+  /* ---------- ONE LINE ---------- */
+  section.oneline{padding:72px 0; text-align:center; background:var(--wine); color:#fff;}
+  section.oneline .serif{font-size:2.2rem; line-height:1.3; max-width:760px; margin:0 auto;}
+  section.oneline .serif em{font-style:italic; color:#f2c8da;}
+  section.oneline .tiny{margin-top:24px; font-size:.84rem; color:rgba(255,255,255,.6); letter-spacing:.04em;}
+
+  /* ---------- FITS INTO VAULT ---------- */
+  section.vaultfit{padding:66px 0; background:var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .vf-intro{text-align:center; max-width:680px; margin:0 auto 46px; color:var(--text-secondary); font-size:1.04rem;}
+  .vf-intro b{color:var(--text);}
+  .vfmap{display:grid; grid-template-columns:1fr; gap:0; max-width:860px; margin:0 auto;}
+  .vf-source{background:var(--wine); color:#fff; border-radius:14px; padding:22px 28px; text-align:center; position:relative; z-index:2; box-shadow:0 6px 24px rgba(139,34,82,.18);}
+  .vf-source .vf-lab{font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:6px;}
+  .vf-source .vf-name{font-family:'DM Serif Display',serif; font-size:1.35rem;}
+  .vf-source .vf-meta{font-family:'DM Mono',monospace; font-size:.76rem; opacity:.85; margin-top:8px;}
+  .vf-stem{height:34px; width:2px; background:var(--border-strong); margin:0 auto;}
+  .vf-fan{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media(max-width:760px){.vf-fan{grid-template-columns:1fr 1fr;}}
+  .vf-dest{background:var(--bg-hover); border:1px solid var(--border); border-radius:12px; padding:18px; text-align:center; position:relative;}
+  .vf-dest:before{content:""; position:absolute; top:-34px; left:50%; width:1.5px; height:34px; background:var(--border-strong);}
+  .vf-dest .vf-ico{font-size:1.5rem; margin-bottom:8px;}
+  .vf-dest .vf-where{font-family:'DM Mono',monospace; font-size:.72rem; color:var(--wine); font-weight:500; margin-bottom:6px;}
+  .vf-dest .vf-what{font-size:.86rem; color:var(--text-secondary);}
+  .vf-dest .vf-what b{color:var(--text);}
+  .vf-line{text-align:center; color:var(--text-tertiary); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; margin:30px 0 18px;}
+  .vf-foot{margin-top:40px; text-align:center; font-family:'DM Serif Display',serif; font-style:italic; font-size:1.12rem; color:var(--text); max-width:720px; margin-left:auto; margin-right:auto;}
+  .vf-foot b{color:var(--wine); font-style:normal; font-weight:400;}
+
+  footer{padding:40px 0 64px; text-align:center; color:var(--text-tertiary); font-size:.82rem;}
+  footer .mono{color:var(--text-secondary);}
+
+
+
+/* PDF-only adjustments — page size is driven by render.py (measures rendered
+   document height + sets a single tall page) so we just disable break logic. */
+@page { margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+<div class="kicker">Anything you read, anywhere, into your vault</div>    <h1 class="serif">Family Articles Capture — Quick Reference</h1>
+<p class="hero-sub">This is the family-wide cheat sheet for getting an article — paywalled or free, on any device — into your Obsidian vault. <strong>Pick your device, pick your channel, follow the icon.</strong></p><div class="for-isabella">For Matthew · Jennie · Isabella · William · Sophie — anyone in the household</div>  </div>
+</header>
+
+
+<section class="bigidea">
+  <div class="wrap">
+<p class="serif">The rule is simple: <strong>find the article, tap one button, walk away.</strong> The vault fills itself up; you read it later in Obsidian.</p><p>You don't pick folders. You don't paste text. You don't worry about images or paywalls. You just push the URL into the system — by sharing from an app, by clicking a browser extension, or by speaking the link — and within seconds it's a clean Markdown note in your Knowledge &amp; Ideas vault with images downloaded, byline preserved, and a permalink so you can revisit the original if needed.</p>  </div>
+</section>
+
+<section class="flow">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">The four stages</div><h2>One tap from "saw it" to "in the vault"</h2>    </div>
+    <div class="strip">
+      <div class="stage">
+        <div class="num">1</div>
+<div class="ico">👆</div>        <div class="name">Tap</div>
+<div class="cap">share OR clip</div><div class="arrow">→</div>      </div>
+      <div class="stage">
+        <div class="num">2</div>
+<div class="ico">🌐</div>        <div class="name">Fetch</div>
+<div class="cap">paywall-aware</div><div class="arrow">→</div>      </div>
+      <div class="stage">
+        <div class="num">3</div>
+<div class="ico">✨</div>        <div class="name">Clean</div>
+<div class="cap">images + metadata</div><div class="arrow">→</div>      </div>
+      <div class="stage turning">
+        <div class="num">4</div>
+<div class="ico">📚</div>        <div class="name">Read</div>
+<div class="cap">in your vault</div>      </div>
+    </div>
+<p class="flow-foot">The middle two stages happen automatically. You only see the first and last.</p>  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">Easiest of all — automatic channels</div><h2>Set-and-forget — zero per-article action required</h2>    </div>
+    <div class="stagecard turning">
+<div class="tag">Channel · FT bookmark sweep</div>      <div class="sc-head">
+<span class="stepno">FT</span>        <h3>Just tap the FT app's bookmark button — daily sweep handles the rest</h3>
+      </div>
+<p class="sc-lede"><strong>This is the easiest FT path full stop.</strong> Tap the in-article bookmark / "save for later" icon in the FT app on any device (or click "Save" on ft.com). Once a day at 06:00, a daemon on the household Mac walks the FT saved-articles list and captures every new bookmark into the K&amp;I vault. <strong>You don't run a Shortcut, don't open a browser extension, don't think about it.</strong> Best-night-out-of-the-week category.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>👉 Your gesture</h4><p>Tap the bookmark icon on any FT article — iPhone FT app, iPad FT app, ft.com in Safari, ft.com in Chrome. All four save into the same FT-side bookmark list.</p>        </div>
+        <div class="mech">
+<h4>⚙️ What happens</h4><p>Daily at 06:00 the <code>ft-bookmark-sweep</code> daemon walks <code>ft.com/myft/saved-articles</code>, captures every new UUID via <code>cli.py</code>, and tracks processed IDs in a state file so bookmarks don't double-capture.</p>        </div>
+        <div class="mech">
+<h4>👨 Matthew</h4><p>His own daemon runs on his Mac.</p>        </div>
+        <div class="mech">
+<h4>👩 Jennie</h4><p>Same — when she taps bookmark in her FT app, it lands in the shared household FT account's bookmark list, which Matthew's daemon sweeps. <strong>Zero setup on her Mac.</strong></p>        </div>
+        <div class="mech">
+<h4>👧 Isabella / William / Sophie</h4><p>Standalone-stack users — their own daemon runs on their own Mac against their own FT sub. Same gesture, their own pipeline.</p>        </div>
+        <div class="mech">
+<h4>🪶 Cost per article</h4><p>0 taps. You're already tapping bookmark anyway when you mark something to read later.</p>        </div>
+      </div>
+    </div>
+    <div class="stagecard">
+<div class="tag">Channel · K&amp;I Substack-emit</div>      <div class="sc-head">
+<span class="stepno">SS</span>        <h3>Subscribe to Substack newsletters via email — daemon emits each into K&amp;I</h3>
+      </div>
+<p class="sc-lede">Forward Substack subscriptions to <code>substacks@isotta.net</code>. The household K&amp;I-substack-emit daemon polls that inbox every 15 minutes and emits each newsletter into the K&amp;I vault as a clean Markdown note. <strong>Newsletters file themselves while you sleep.</strong> Zero per-article action.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>👉 Your gesture</h4><p>When subscribing to a new Substack publication, use <code>substacks@isotta.net</code> as the email address. Existing subscriptions can be migrated by updating the subscription email on the Substack publication page.</p>        </div>
+        <div class="mech">
+<h4>⚙️ What happens</h4><p>Every 15 min the <code>k-and-i-substack-emit</code> daemon polls Matthew's <code>Inbox/Substack</code> MS Graph folder, parses each newsletter HTML, filters platform noise (no-reply / on / post @substack.com), and emits <code>YYYY-MM-DD SS &lt;Publisher&gt; — &lt;Title&gt;.md</code> into the K&amp;I inbox.</p>        </div>
+        <div class="mech">
+<h4>👨 Matthew</h4><p>His daemon runs on his Mac, processes <code>substacks@isotta.net</code> (his identity).</p>        </div>
+        <div class="mech">
+<h4>👩 Jennie</h4><p>Shared K&amp;I vault — his daemon's output is hers too. No daemon on her Mac. <strong>Zero setup.</strong></p>        </div>
+        <div class="mech">
+<h4>👧 Isabella</h4><p>Question for deploy time — does she want her own substacks alias + daemon, or share the household feed? Default is share. If she wants her own, set up <code>substacks-isabella@isotta.net</code> forwarder + install the daemon per <code>isabella-deployment/</code>.</p>        </div>
+        <div class="mech">
+<h4>🪶 Cost per article</h4><p>0 taps. You're already subscribed.</p>        </div>
+      </div>
+    </div>
+    <div class="stagecard">
+<div class="tag">Channel · Email-this-article (planned)</div>      <div class="sc-head">
+<span class="stepno">📧</span>        <h3>Use a publisher's native "email this article" feature</h3>
+      </div>
+<p class="sc-lede">Some publications (and webpages) have a built-in "Email this article" link. Forward to a vault alias and the email-triage daemon files it into K&amp;I. <strong>Planned channel</strong> — Workstream 03 in 2d-articles/. Will be the zero-engineering-per-publisher route when shipped.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>👉 Your future gesture</h4><p>Click "Email this article" / "Email a friend" in the publisher's article toolbar. Send to a dedicated vault alias (TBD — likely <code>vault-articles@isotta.net</code>).</p>        </div>
+        <div class="mech">
+<h4>⚙️ Future behavior</h4><p>Email triage daemon recognises vault-alias as routing target, converts the email body via email-to-pdf-converter, files into K&amp;I.</p>        </div>
+        <div class="mech">
+<h4>🚧 Status</h4><p>Not yet built. Tracked as Workstream 03 in <code>projects/2-capture/2d-articles/workstreams/</code>. Compatible with the existing email-triage daemon.</p>        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">Pick your device — for everything the automatic channels don&#39;t cover</div><h2>What to use on iPhone, iPad, and Mac</h2>    </div>
+    <div class="stagecard">
+<div class="tag">Device · iPhone</div>      <div class="sc-head">
+<span class="stepno">📱</span>        <h3>On the smaller screen — share-sheet first</h3>
+      </div>
+<p class="sc-lede">iPhone reading happens inside publisher apps (FT app, Substack app, Telegraph app) or Safari. The <strong>iOS Share Sheet</strong> is your one button. Tap Share, find the <strong>"Send to Vault"</strong> shortcut, and you're done.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>🔗 Send to Vault (Shortcut)</h4><p>Works in any app's share sheet. Posts the URL to your home Mac, which fetches the article and writes it into K&amp;I. Best for FT, Telegraph, Substack.</p>        </div>
+        <div class="mech">
+<h4>✂️ Obsidian Web Clipper (Safari)</h4><p>Tap the WC button in the Safari share row. Best for free articles + Substack notes. Note — paywalled NYT/Bloomberg/Times don't work via iOS WC; share-sheet to Mac instead.</p>        </div>
+        <div class="mech">
+<h4>📰 FT app share</h4><p>Inside the FT app, tap the in-article share icon (NOT Safari's share-sheet — Safari emits a different URL form that FTAdapter can't bypass).</p>        </div>
+        <div class="mech">
+<h4>⚠️ Tailscale required</h4><p>The Shortcut needs Tailscale connected to reach the Mac. If you see "could not find hostname", open Tailscale.app on the iPhone and toggle it.</p>        </div>
+      </div>
+    </div>
+    <div class="stagecard turning">
+<div class="tag">Device · iPad</div>      <div class="sc-head">
+<span class="stepno">📲</span>        <h3>The 90% reading surface</h3>
+      </div>
+<p class="sc-lede">iPad is the canonical reading device for this household. Most captures originate here. Use <strong>Send to Vault</strong> for paywalled content + <strong>Web Clipper</strong> for free articles.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>🔗 Send to Vault (Shortcut)</h4><p>Same Shortcut as iPhone. Best for Telegraph, FT (via FT app), Substack. Posts to your home Mac.</p>        </div>
+        <div class="mech">
+<h4>✂️ Obsidian Web Clipper (Safari)</h4><p>Works for free articles. <strong>Don't use for NYT, Bloomberg, or Times</strong> — iPad WC only captures the above-paywall portion. Use Mac Safari WC instead for those.</p>        </div>
+        <div class="mech">
+<h4>🔋 Vault open first</h4><p>Open Obsidian and let it finish indexing BEFORE you clip. WC clips during indexing land as 0-byte files and silently disappear.</p>        </div>
+        <div class="mech">
+<h4>🎯 Vault dropdown</h4><p>After importing templates, check the Vault dropdown in WC settings shows "Knowledge and Ideas" — it can default to the wrong vault on Chromium-based browsers.</p>        </div>
+      </div>
+    </div>
+    <div class="stagecard">
+<div class="tag">Device · Mac</div>      <div class="sc-head">
+<span class="stepno">💻</span>        <h3>Power user surface — every option works</h3>
+      </div>
+<p class="sc-lede">Mac has the most options. <strong>Web Clipper in Safari</strong> is the canonical fallback for paywalled NYT, Bloomberg, and Times. <strong>⌘⇧V</strong> captures a URL by hotkey. The Send-to-Vault Shortcut is also available.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>✂️ Obsidian Web Clipper (Safari + Chrome)</h4><p>Best for general web pages, Substack, Bloomberg, NYT, Times. Click the WC button → confirm vault → save. Images localised automatically by Local Images Plus.</p>        </div>
+        <div class="mech">
+<h4>⌘⇧V Capture to Vault (Shortcut)</h4><p>Hotkey from any URL bar or selected text. Fastest for Mac-based reading; bypasses share sheets entirely.</p>        </div>
+        <div class="mech">
+<h4>🖱 Right-click "Send to Vault"</h4><p>From any URL, right-click → Services → Send to Vault. Same as ⌘⇧V but discoverable.</p>        </div>
+        <div class="mech">
+<h4>🖥 cli.py (terminal)</h4><p>For batch captures or scripted workflows. <code>python3 ~/claude/scripts/2-capture/articles/cli.py &lt;url&gt;</code>. Defaults to K&I; pre-flight checks publisher cookies.</p>        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">Which icon for which job</div><h2>Three categories of capture</h2>    </div>
+    <div class="pillar-grid">
+    </div>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="section-head">
+<div class="eyebrow">Channel matrix — at a glance</div><h2>Which channel works for each publication</h2>    </div>
+    <div class="stagecard">
+<div class="tag">Publisher · FT</div>      <div class="sc-head">
+<span class="stepno">FT</span>        <h3>Best path = bookmark in the FT app, full stop</h3>
+      </div>
+<p class="sc-lede">FT has the best automatic channel of any publisher: <strong>tap the bookmark icon in the FT app</strong> (any device) and the daily 06:00 sweep daemon captures it. Zero per-article action. Use a Shortcut or Web Clipper only when you want the capture <em>now</em> rather than tomorrow.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>⭐ Bookmark in FT app (any device)</h4><p>Best path. Tap bookmark → daemon catches it overnight. Zero taps beyond the native bookmark gesture.</p>        </div>
+        <div class="mech">
+<h4>✅ iPhone × FT app × Shortcut</h4><p>When you want it now.</p>        </div>
+        <div class="mech">
+<h4>✅ iPad × FT app × Shortcut</h4><p>Same as iPhone. iPad is the 90% reading device.</p>        </div>
+        <div class="mech">
+<h4>✅ Mac × Safari × Web Clipper</h4><p>Works fine on the Mac.</p>        </div>
+        <div class="mech">
+<h4>⚠️ iPhone × Safari (NOT FT app)</h4><p>Safari's share-sheet emits a different URL shape that bypasses your subscription. Use the FT app, not Safari, on iPhone.</p>        </div>
+      </div>
+    </div>
+    <div class="stagecard">
+<div class="tag">Publisher · Telegraph</div>      <div class="sc-head">
+<span class="stepno">TG</span>        <h3>Just works on every device</h3>
+      </div>
+<p class="sc-lede">Telegraph works via Shortcut or Web Clipper on any device. Cookies refresh automatically.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>✅ iPhone / iPad</h4><p>Shortcut or Web Clipper.</p>        </div>
+        <div class="mech">
+<h4>✅ Mac</h4><p>Shortcut or Web Clipper or ⌘⇧V.</p>        </div>
+      </div>
+    </div>
+    <div class="stagecard">
+<div class="tag">Publisher · Substack</div>      <div class="sc-head">
+<span class="stepno">SS</span>        <h3>Best path = subscribe via email</h3>
+      </div>
+<p class="sc-lede">For newsletters you read regularly, <strong>subscribe via <code>substacks@isotta.net</code></strong> — the K&amp;I Substack-emit daemon files each new edition into K&amp;I every 15 min, automatically. For ad-hoc reading (notes, posts you found via search, paid posts), use the in-app share or the Shortcut.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>⭐ Subscribe with substacks@isotta.net</h4><p>Best path for newsletters you read repeatedly. Auto-files every edition. Zero per-article action.</p>        </div>
+        <div class="mech">
+<h4>✅ Inside the post → Share</h4><p>Best path for ad-hoc reading. Use the Substack app's in-post Share, not the home feed Share (home-feed URL is slower to resolve).</p>        </div>
+        <div class="mech">
+<h4>⚠️ Home feed → Share</h4><p>Works, but slower (canonical URL resolved server-side via SS-2).</p>        </div>
+        <div class="mech">
+<h4>✅ Web Clipper</h4><p>Works on any device for any Substack URL. Best for Substack Notes (the Shortcut handles those too, but WC is cleaner).</p>        </div>
+      </div>
+    </div>
+    <div class="stagecard turning">
+<div class="tag">Publisher · NYT / Bloomberg / Times</div>      <div class="sc-head">
+<span class="stepno">🔒</span>        <h3>Mac Safari Web Clipper ONLY</h3>
+      </div>
+<p class="sc-lede">These three publishers use TLS-fingerprint bot detection that defeats both the Shortcut and iPad WC. The only working path is <strong>Mac Safari Web Clipper</strong>, where your real Safari session masquerades correctly.</p>      <div class="sc-grid">
+        <div class="mech">
+<h4>❌ iPhone / iPad anything</h4><p>Doesn't work. Don't bother trying.</p>        </div>
+        <div class="mech">
+<h4>✅ Mac Safari Web Clipper</h4><p>The canonical fallback. Works because you're already logged in.</p>        </div>
+        <div class="mech">
+<h4>🪀 Long-press → Copy Link → AirDrop to Mac</h4><p>If you spot something on iPhone, AirDrop the URL to your Mac and clip there.</p>        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bigidea">
+  <div class="wrap">
+<p class="serif">If something doesn't work, <strong>try a different device + channel</strong> before asking — Mac Safari Web Clipper is the universal fallback for nearly everything.</p><p>Each capture path has a sweet spot and a blind spot. The matrix above tells you the sweet spot per publisher. If you hit a blind spot (clip lands empty, no images, paywall fade), switch device or channel and try again. Don't fight it.</p>  </div>
+</section>
+
+<section class="oneline">
+  <div class="wrap">
+    <p class="serif"><strong>Capture cheap once.</strong> The hard part — fetching, cleaning, localising images, attaching metadata — happens automatically. Your job is the tap.</p>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+<p class="mono">Family Articles Capture — Quick Reference · v1 · 2026-05-31</p><p style="margin-top:8px;">Per articles D4 (per-adult deployment template) + cross-capture D17/D18 (TLS-fingerprint scope). See projects/2-capture/2d-articles/ for the engineering detail.</p>  </div>
+</footer>
+
+</body>
+</html>
