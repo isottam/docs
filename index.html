@@ -30,6 +30,30 @@
   .serif{font-family:'DM Serif Display',Georgia,serif;}
   .mono{font-family:'DM Mono',monospace;}
 
+  /* ===================================================================
+   * iPhone Safari rendering fix (2026-06-01 — investigation in
+   * projects/4-surface/4m-publishing/iphone-rendering-investigation-2026-06-01.md).
+   *
+   * At iPhone viewport (393×852) the article-capture table has an
+   * intrinsic 828px width. The table is a direct child of div.wrap;
+   * nothing in the ancestor chain had overflow-x, so the document
+   * scrollWidth blew out to ~856px while body stayed at 393px. Section
+   * backgrounds (wine .oneline, cream .bigidea) painted only the body's
+   * 393px and ran out on horizontal scroll — the visible "white strip"
+   * symptom.
+   *
+   * iPad (768px+) is media-queried out — Playwright verification at
+   * 768x1024 and 1024x1366 confirmed no regression.
+   * =================================================================== */
+  @media (max-width: 480px) {
+    html, body { overflow-x: hidden; }
+    .bigidea .wrap:has(> table),
+    section .wrap:has(> table) {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
   /* ---------- HERO ---------- */
   header.hero{padding:84px 0 56px; text-align:center; border-bottom:1px solid var(--border);}
   .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:22px;}
