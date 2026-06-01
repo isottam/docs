@@ -65,6 +65,20 @@
     }
   }
 
+  /* Notes-style tables (any .bigidea <table> that isn't the article-capture
+     table) contain long URLs + paths in <code> spans. Browsers don't wrap
+     <code> content by default, so a single long URL like
+     `https://isottam.github.io/docs/articles-quick-reference/` forced
+     the Notes table's Detail column wider than the article-capture table
+     beside it — which then made the document scrollWidth widen on iPhone
+     landscape (where the @media max-width:480 fix doesn't apply since
+     landscape iPhone is 852px+). Force code spans to wrap aggressively so
+     the table never exceeds its container. */
+  .bigidea table:not(.article-capture) code {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+
   /* ---------- HERO ---------- */
   header.hero{padding:84px 0 56px; text-align:center; border-bottom:1px solid var(--border);}
   .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:22px;}
@@ -803,7 +817,7 @@
 
 <footer>
   <div class="wrap">
-<p class="mono">Articles Quick Reference · v7.24 · 2026-06-01 (iPhone bg fix — Playwright-diagnosed root cause: table intrinsic 828px wider than 393px iPhone viewport, ancestor chain lacked overflow-x; fix is @media max-width:480px containing overflow + .wrap-with-table local scroll; verified iPad-unaffected at 768/1024/1024-pro)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
+<p class="mono">Articles Quick Reference · v7.25 · 2026-06-01 (iPhone landscape fix — Notes table code spans (URLs/paths) wrapped via overflow-wrap:anywhere + word-break:break-all so the Notes table no longer sprawls wider than article-capture; this was the cause of the page-widens-to-widest-section behaviour in landscape where the v7.24 max-width:480 media query doesn't apply)</p><p style="margin-top:8px;">For engineering detail, see projects/2-capture/2d-articles/ in the claude repo.</p>  </div>
 </footer>
 
 </body>

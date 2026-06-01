@@ -54,6 +54,20 @@
     }
   }
 
+  /* Notes-style tables (any .bigidea <table> that isn't the article-capture
+     table) contain long URLs + paths in <code> spans. Browsers don't wrap
+     <code> content by default, so a single long URL like
+     `https://isottam.github.io/docs/articles-quick-reference/` forced
+     the Notes table's Detail column wider than the article-capture table
+     beside it — which then made the document scrollWidth widen on iPhone
+     landscape (where the @media max-width:480 fix doesn't apply since
+     landscape iPhone is 852px+). Force code spans to wrap aggressively so
+     the table never exceeds its container. */
+  .bigidea table:not(.article-capture) code {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+
   /* ---------- HERO ---------- */
   header.hero{padding:84px 0 56px; text-align:center; border-bottom:1px solid var(--border);}
   .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:22px;}
