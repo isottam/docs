@@ -84,6 +84,35 @@
     word-break: break-all;
   }
 
+  /* Landscape iPhone specifically: shrink article-capture cell padding so
+     the table fits in viewport without horizontal scrolling. Notes + legend
+     tables already fit (they wrap their code spans per the rule above), but
+     article-capture is built around icons that don't wrap, so the table
+     itself needs to be narrower. Centre it within .wrap so any slack space
+     splits evenly into a gray border on each side — matching the Notes +
+     legend tables' visual treatment.
+
+     Targets landscape phones only:
+       - max-width:932 catches up to iPhone 14 Pro Max landscape (932×430)
+       - orientation:landscape excludes iPad portrait (768+, taller than wide)
+       - iPhone portrait (393w, taller) excluded too — handled by the
+         earlier @media max-width:480 wrap-scroll fix. */
+  @media (max-width: 932px) and (orientation: landscape) {
+    .bigidea table.article-capture th,
+    .bigidea table.article-capture td {
+      padding: 18px 16px;
+    }
+    .bigidea table.article-capture th:nth-child(7),
+    .bigidea table.article-capture td:nth-child(7) {
+      padding-left: 40px;
+      box-shadow: inset 28px 0 0 var(--bg-inset);
+    }
+    .bigidea table.article-capture {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   /* ---------- HERO ---------- */
   header.hero{padding:84px 0 56px; text-align:center; border-bottom:1px solid var(--border);}
   .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:22px;}
